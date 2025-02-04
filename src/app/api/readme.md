@@ -1,0 +1,1 @@
+contains apis such as /auth, /user, /post, etc.

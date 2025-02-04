@@ -1,0 +1,1 @@
+contains global css files, styling files & tailwind configs.

@@ -1,0 +1,1 @@
+fe based dir, this folder contains route segments & pages, layout files, server components, etc.
