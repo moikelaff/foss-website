@@ -12,10 +12,17 @@
     "@chakra-ui/react": "^3.6.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@payloadcms/db-mongodb": "^3.22.0",
+    "@payloadcms/next": "^3.22.0",
+    "@payloadcms/richtext-lexical": "^3.22.0",
+    "foss-website": "file:",
     "framer-motion": "^12.0.11",
+    "graphql": "^16.10.0",
     "next": "15.1.6",
+    "payload": "^3.22.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
