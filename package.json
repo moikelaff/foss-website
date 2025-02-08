@@ -19,6 +19,7 @@
     "foss-website": "file:",
     "framer-motion": "^12.0.11",
     "graphql": "^16.10.0",
+    "mongoose": "^8.10.0",
     "next": "15.1.6",
     "payload": "^3.22.0",
     "react": "^19.0.0",
