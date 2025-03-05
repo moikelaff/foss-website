@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brandWhite: "#FFFFFF",
+        brandNavy: "#01395E",
+        brandGray: "#AEAEAE",
       },
       fontFamily: {
         halyard: ["var(--font-halyard)"],

@@ -35,10 +35,13 @@
   font-style: italic;
 }
 
-/* Define the font in Tailwind */
+/* Define Font & Colors in Tailwind */
 @layer base {
   :root {
     --font-halyard: 'Halyard Display', sans-serif;
+    --color-brandWhite: #FFFFFF;
+    --color-brandNavy: #01395E;
+    --color-brandGray: #AEAEAE;
   }
 }
 
