@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Load Halyard Display Locally */
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayBook-Regular.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayBook-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayBook-Italic.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayBook-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayMedium-Regular.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayMedium-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayMedium-Italic.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayMedium-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Define the font in Tailwind */
+@layer base {
+  :root {
+    --font-halyard: 'Halyard Display', sans-serif;
+  }
+}
+
+.font-halyard {
+  font-family: var(--font-halyard);
+}
