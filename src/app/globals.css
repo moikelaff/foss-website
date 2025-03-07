@@ -2,20 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Load Halyard Display Locally */
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayBook-Regular.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayBook-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayBook-Italic.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayBook-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayMedium-Regular.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayMedium-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  src: url('/fonts/HalyardDisplayMedium-Italic.woff2') format('woff2'),
+       url('/fonts/HalyardDisplayMedium-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Define Font & Colors in Tailwind */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-halyard: 'Halyard Display', sans-serif;
+    --color-brandWhite: #FFFFFF;
+    --color-brandNavy: #01395E;
+    --color-brandGray: #AEAEAE;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.font-halyard {
+  font-family: var(--font-halyard);
 }
