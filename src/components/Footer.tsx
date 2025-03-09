@@ -1,6 +1,8 @@
 "use client";
 import { Mail, Phone, Instagram, Music } from "lucide-react";
 
+// IMPORTANT!!! INSERT SOCIAL MEDIA LINKS!!!!!
+
 const Footer = () => {
   return (
     <footer className="bg-[#01395E] h-[359px] text-white pt-[20px] pb-[29px] px-[20px]">

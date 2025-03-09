@@ -1,5 +1,6 @@
 import React from "react";
 
+import NavBar from "@/components/NavBar";
 import AdmissionsHero from "@/components/AdmissionsHero";
 import ProgramsSection from "@/components/ProgramsSection";
 import FAQSection from "@/components/FAQSection";
@@ -7,9 +8,10 @@ import Footer from "@/components/Footer";
 
 export default function AdmissionsPage() {
   return (
-    // tinggal tambahin navbar here
     <>
-      // tinggal tambahin navbar here
+      <nav>
+        <NavBar />
+      </nav>
       <main>
         <AdmissionsHero />
         <ProgramsSection />
