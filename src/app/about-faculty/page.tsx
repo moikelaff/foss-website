@@ -15,9 +15,7 @@ export default function Page() {
         <Program />
         <Goal />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

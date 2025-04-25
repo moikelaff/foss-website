@@ -5,12 +5,12 @@ import { Mail, Phone, Instagram, Music } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#01395E] h-[359px] text-white pt-[20px] pb-[29px] px-[20px]">
+    <footer className="bg-[#01395E] h-[359px] text-white pt-[20px] pb-[29px] px-[50px] font-halyard">
       <div className="max-w-full h-[310px] mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Left Section */}
         <div className="mb-6 md:mb-0">
-          <h3 className="text-[20px] font-bold">
-            Faculty of Social Sciences Universitas <br /> Islam Internasional
+          <h3 className="text-[20px] font-medium">
+            Faculty of Social Sciences <br /> Universitas Islam Internasional
             Indonesia
           </h3>
           <p className="text-sm leading-relaxed py-[40px]">
@@ -27,9 +27,9 @@ const Footer = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col items-end w-[348px] h-[339px]">
-          <h4 className="text-[20px] font-semibold">Email Us</h4>
-          <div className="pt-[40px] pb-[149px] text-sm text-right">
+        <div className="flex flex-col items-start w-[348px] h-[339px]">
+          <h4 className="text-[20px] font-medium">Email Us</h4>
+          <div className="pt-[40px] pb-[40px] text-sm text-left">
             <a
               href="mailto:social.sciences@uiii.ac.id"
               className="block hover:text-blue-300"
