@@ -26,10 +26,9 @@ const NavBar = () => {
       label: "Academic Programs",
       hasDropdown: true,
       subItems: [
-        { label: "MA & PhD in Political Science", type: "subheader" }, 
-        { label: "PhD in Political Science", type: "item", indent: true },
-        { label: "Master of Arts (MA) in Political Science", type: "item", indent: true },
-        { label: "Master in Public Policy focusing on Climate Change", type: "item", indent: false },
+        { label: "PhD in Political Science", type: "item"},
+        { label: "Master of Arts (MA) in Political Science", type: "item"},
+        { label: "Master in Public Policy focusing on Climate Change", type: "item"},
       ],
     },
     {
