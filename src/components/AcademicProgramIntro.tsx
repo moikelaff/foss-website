@@ -4,18 +4,18 @@ export default function AcademicProgramHero() {
   return (
     <section className="w-full flex justify-center bg-sky-950 py-16">
         
-  <div className="w-[1440px] flex justify-between items-start px-8">
+  <div className="w-[1440px] flex justify-between items-start px-16">
     {/* Text Section */}
     <div className="w-[800px] inline-flex flex-col justify-start items-start gap-14">
       {/* Hero Title */}
-      <h1 className="text-white text-5xl font-medium font-['Inter']">
-        At UIII, the study of Political Science is an engaging and in-depth
+      <h1 className="text-white text-4xl font-medium font-['Halyard_Display']">
+        "At UIII, the study of Political Science is an engaging and in-depth
         experience, allowing students to explore political phenomena in all
-        their complexity.
+        their complexity.""
       </h1>
 
       {/* Hero Description */}
-      <p className="text-white text-3xl font-light font-['Halyard_Display']">
+      <p className="text-white text-2xl font-light font-['Halyard_Display']">
         The institution offers a comprehensive suite of graduate programs in
         Political Science, each tailored to meet different academic and career
         aspirations. These include a Master’s program and two distinct Ph.D.

@@ -36,7 +36,7 @@ const mission = [
 export default function VisionMissionSection() {
   return (
     <section className="w-full py-16 bg-white">
-      <div className="max-w-[1480px] mx-auto flex flex-col items-start gap-20 px-4">
+      <div className="max-w-[1480px] mx-auto flex flex-col items-start gap-20 px-16">
 
         {/* VISION HEADER */}
         <div className="w-full text-left">
@@ -46,8 +46,8 @@ export default function VisionMissionSection() {
         </div>
         
         {/* VISION */}
-        <div className="w-[982px] flex flex-col gap-6">
-          <p className="text-3xl font-light font-['Halyard_Display'] text-Neutral-1">
+        <div className="w-[982px] flex flex-col gap-1">
+          <p className="text-2xl font-light font-['Halyard_Display'] text-Neutral-1">
             The Graduate Program in Political Science (PS MIP) at UIII projects its scholarly
             vision with an emphasis on imparting and proliferating knowledge about the evolving
             socio-political dynamics of Indonesia, as well as of Muslim societies and countries
