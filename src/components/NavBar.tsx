@@ -69,9 +69,14 @@ const NavBar = () => {
     },
     {
       label: "Campus Life",
-      href: "/campus-life", // Add a href for main menu item
+      href: "/CampusLife", 
       hasDropdown: true,
-      subItems: ["Events","Student Activities", "Lecturer Activities", "Alumni Activities"].map((item) => ({ label: item, type: "item" })),
+      subItems: [
+        { label: "Events", type: "item", href: "/CampusLife/Events" },
+        { label: "Student Activities", type: "item", href: "/CampusLife/StudentActivities" },
+        { label: "Lecturer Activities", type: "item", href: "/CampusLife/LecturerActivities" },
+        { label: "Alumni Activities", type: "item", href: "/CampusLife/AlumniActivities" },
+      ],
     },
   ];
 
