@@ -38,30 +38,43 @@ const NavBar = () => {
     },
     {
       label: "Academic Programs",
-      href: "/academic-program", 
+      href: "/academic-program",
       hasDropdown: true,
       subItems: [
-        { label: "PhD in Political Science", type: "item", href: "/academic-program/phd-political-science"},
-        { label: "Master of Arts (MA) in Political Science", type: "item", href: "/academic-program/ma-political-science" },
-        { label: "Master in Public Policy focusing on Climate Change", type: "item", href: "/academic-program/master-public-policy" },
+        {
+          label: "PhD in Political Science",
+          type: "item",
+          href: "/academic-program/phd-political-science",
+        },
+        {
+          label: "Master of Arts (MA) in Political Science",
+          type: "item",
+          href: "/academic-program/ma-political-science",
+        },
+        {
+          label: "Master in Public Policy focusing on Climate Change",
+          type: "item",
+          href: "/academic-program/master-public-policy",
+        },
       ],
     },
     {
       label: "Research & Publications",
-      href: "/research", 
+      href: "/research-and-publication/compose",
       hasDropdown: true,
       subItems: [
+        {
+          label:
+            "Center of Muslim Politics and World Society Studies (COMPOSE)",
+          type: "item",
+          href: "/research-and-publication/compose",
+        },
+        { label: "COMPOSE Working Paper", type: "item", indent: true },
         {
           label:
             "National Survey Varieties of Muslim Religious Practices and Views in Indonesia",
           type: "item",
         },
-        {
-          label:
-            "Center of Muslim Politics and World Society Studies (COMPOSE)",
-          type: "item",
-        },
-        { label: "COMPOSE Working Paper", type: "item", indent: true },
         { label: "Journal", type: "item" },
         { label: "Students", type: "item", indent: true },
         { label: "Lecturers", type: "item", indent: true },
@@ -69,13 +82,25 @@ const NavBar = () => {
     },
     {
       label: "Campus Life",
-      href: "/CampusLife", 
+      href: "/CampusLife",
       hasDropdown: true,
       subItems: [
         { label: "Events", type: "item", href: "/CampusLife/Events" },
-        { label: "Student Activities", type: "item", href: "/CampusLife/StudentActivities" },
-        { label: "Lecturer Activities", type: "item", href: "/CampusLife/LecturerActivities" },
-        { label: "Alumni Activities", type: "item", href: "/CampusLife/AlumniActivities" },
+        {
+          label: "Student Activities",
+          type: "item",
+          href: "/CampusLife/StudentActivities",
+        },
+        {
+          label: "Lecturer Activities",
+          type: "item",
+          href: "/CampusLife/LecturerActivities",
+        },
+        {
+          label: "Alumni Activities",
+          type: "item",
+          href: "/CampusLife/AlumniActivities",
+        },
       ],
     },
   ];
@@ -101,7 +126,9 @@ const NavBar = () => {
             onMouseEnter={() => setOpenDropdown(index)}
             onMouseLeave={() => setOpenDropdown(null)}
           >
-            <Link href={item.href}> {/* Wrap the label in a Link */}
+            <Link href={item.href}>
+              {" "}
+              {/* Wrap the label in a Link */}
               <button
                 className={`flex items-center text-[16px] space-x-1 transition-colors ${
                   openDropdown === index

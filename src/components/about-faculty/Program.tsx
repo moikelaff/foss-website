@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Program() {
   return (
     <section className="py-14 px-8 bg-[#f5f7fb]">
@@ -5,7 +7,7 @@ export default function Program() {
         <h2 className="text-5xl text-brandNavy font-medium mb-12 flex items-center gap-4">
           <img
             src="/Img-AboutFaculty/College.svg"
-            alt="Eye Icon"
+            alt="college Icon"
             className="w-10 h-10"
           />
           Our Programs
@@ -29,6 +31,11 @@ export default function Program() {
                 crafted to foster a deep understanding of the intricate dynamics
                 of politics, both theoretically and in practice.
               </p>
+              <Link href="/academic-program/ma-political-science">
+                <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition mt-4">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -52,6 +59,11 @@ export default function Program() {
                 will be proficient in original, independent research about
                 political dynamics.
               </p>
+              <Link href="/academic-program/phd-political-science">
+                <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition mt-4">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -76,6 +88,11 @@ export default function Program() {
                 evaluating public policies to tackle pressing challenges of
                 climate change.
               </p>
+              <Link href="/academic-program/mpp-climate-change">
+                <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition mt-4">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
