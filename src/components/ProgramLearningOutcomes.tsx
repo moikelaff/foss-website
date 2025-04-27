@@ -1,45 +1,13 @@
 // src/components/PHDPoliticalScience.tsx
 import React from "react";
 
-export default function PHDPoliticalScience() {
+export default function ProgramBanner() {
   return (
     <section className="max-w-[1480px] mx-auto py-16 px-4 flex flex-col items-start gap-14">
-      {/* Title */}
-      <h1 className="text-9xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
-        PhD in Political Science
-      </h1>
-
-      {/* Intro Description */}
-      <p className="text-2xl font-light font-['Halyard_Display'] text-Neutral-1">
-        The Ph.D. program in Political Science at UIII stands as a beacon of academic excellence and rigorous scholarship.
-        Tailored to address the intricate political landscapes of Muslim societies and states, this program seeks to nurture
-        scholars who will be proficient in original, independent research about political dynamics.
-      </p>
-
-      {/* Hero Image */}
-      <img
-        src="/phd-hero.png"
-        alt="PhD in Political Science"
-        className="w-[1035px] h-[1018px] object-cover"
-      />
-
-      {/* Program Overview */}
-      <div className="w-full flex flex-col items-start gap-6">
-        <h2 className="text-8xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
-          Program Overview
-        </h2>
-        <p className="text-3xl font-light font-['Halyard_Display'] text-Neutral-1">
-          Depending on their research interest, students will take several courses that constitute the core subject of their expertise.
-          The Ph.D. program is designed to equip students with excellent theoretical knowledge and methodological rigor to address
-          complex socio-political challenges. With a unique blend of theoretical depth and empirical richness, students gain the tools
-          to dissect political phenomena, understand the undercurrents of international relations, and propose innovative solutions
-          to pressing societal issues.
-        </p>
-      </div>
 
       {/* Learning Outcomes */}
       <div className="w-full flex flex-col items-start gap-6">
-        <h2 className="text-8xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
+        <h2 className="text-7xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
           Learning Outcomes
         </h2>
         <div className="flex flex-wrap justify-start items-start gap-10">
@@ -84,9 +52,6 @@ export default function PHDPoliticalScience() {
           ))}
         </div>
       </div>
-
-      {/* Divider / Footer Section */}
-      <div className="w-full h-96 bg-Primary-1" />
     </section>
   );
 }
