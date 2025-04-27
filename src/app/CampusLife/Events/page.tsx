@@ -93,7 +93,9 @@ export default function Events() {
       <section className="py-5 bg-white-50 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
           {events.map((event) => (
-            <Link key={event.id} href={event.link}>
+            <Link 
+            key={event.id} 
+            href={event.link}>
               <div
                 className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
                 style={{
@@ -101,9 +103,9 @@ export default function Events() {
                   width: "100%",
                   maxWidth: "600px",
                   margin: "0 auto",
-                  display: "flex", // Flexbox to ensure proper alignment
+                  display: "flex", 
                   flexDirection: "column",
-                  height: "450px", // Set a fixed height for the card to maintain consistency
+                  height: "450px", 
                 }}
               >
                 <div className="flex w-full">
