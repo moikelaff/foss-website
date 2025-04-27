@@ -3,11 +3,11 @@ import React from "react";
 
 export default function ProgramBanner() {
   return (
-    <section className="max-w-[1480px] mx-auto py-16 px-4 flex flex-col items-start gap-14">
+    <section className="max-w-[1480px] mx-auto py-16 px-20 flex flex-col items-start gap-14">
 
       {/* Learning Outcomes */}
       <div className="w-full flex flex-col items-start gap-6">
-        <h2 className="text-7xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
+        <h2 className="text-6xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
           Learning Outcomes
         </h2>
         <div className="flex flex-wrap justify-start items-start gap-10">
@@ -42,10 +42,10 @@ export default function ProgramBanner() {
             }
           ].map((item, idx) => (
             <div key={idx} className="w-72 flex flex-col gap-2">
-              <h3 className="text-3xl font-medium font-['Halyard_Display'] text-black">
+              <h3 className="text-2xl font-medium font-['Halyard_Display'] text-black">
                 {item.title}
               </h3>
-              <p className="text-2xl font-light font-['Halyard_Display'] text-black">
+              <p className="text-1xl font-light font-['Halyard_Display'] text-black">
                 {item.desc}
               </p>
             </div>

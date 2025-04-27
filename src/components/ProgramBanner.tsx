@@ -3,9 +3,9 @@ import React from "react";
 
 export default function ProgramBanner() {
   return (
-    <section className="max-w-[1480px] mx-auto py-16 px-4 flex flex-row items-center gap-14">
+    <section className="max-w-[1480px] mx-auto py-16 px-20 flex flex-row items-center gap-20">
       {/* Left: Text */}
-      <div className="flex flex-col items-start gap-8 max-w-[700px]">
+      <div className="flex flex-col items-start gap-14 max-w-[700px]">
         <h1 className="text-7xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
           PhD in Political Science
         </h1>

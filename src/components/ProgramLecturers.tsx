@@ -2,11 +2,25 @@
 
 import React, { useState } from "react";
 
-const lecturers = Array.from({ length: 16 }, (_, i) => ({
-  id: i,
-  name: `Lecturer ${i + 1}`,
-  image: `https://placehold.co/200x200?text=Lecturer+${i + 1}`,
-}));
+const lecturers = [
+    { id: 1, name: "Sirojuddin Arif, Ph.D.", image: "https://placehold.co/200x200?text=name" },
+    { id: 2, name: "Sonny Mumbunan, Ph.D.", image: "https://placehold.co/200x200?text=name" },
+    { id: 3, name: "Assoc. Prof. Moch Faisal Karim", image: "/Assoc. Prof. Moch Faisal Karim.jpg" },
+    { id: 4, name: "Testriono, Ph.D.", image: "https://placehold.co/200x200?text=name" },
+    { id: 5, name: "Prof. Greg Fealy", image: "https://placehold.co/200x200?text=name" },
+    { id: 6, name: "Prof. Michiel Schaeffer", image: "/Prof. Michiel Schaeffer.jpg" },
+    { id: 7, name: "Samuel Blanch, Ph.D.", image: "/Samuel Blanch, Ph.D..jpg" },
+    { id: 8, name: "Prof. Komaruddin Hidayat", image: "https://placehold.co/200x200?text=name" },
+    { id: 9, name: "Prof. Farish A. Noor", image: "/Prof. Farish A. Noor.jpg" },
+    { id: 10, name: "James Jordan Guild, Ph.D.", image: "James Jordan Guild, Ph.D..jpg" },
+    { id: 11, name: "Muhammad Al Atiqi, Ph.D.", image: "/Muhammad Al Atiqi, Ph.D..jpg" },
+    { id: 12, name: "Priza Marendraputra, Ph.D.", image: "/Priza Marendraputra, Ph.D..jpg" },
+    { id: 13, name: "Prof. Maya Sari", image: "https://placehold.co/200x200?text=name" },
+    { id: 14, name: "Dr. Nurul Fadilah", image: "https://placehold.co/200x200?text=name" },
+    { id: 15, name: "Prof. Omar Yassin", image: "https://placehold.co/200x200?text=name" },
+    { id: 16, name: "Dr. Putri Anindya", image: "https://placehold.co/200x200?text=name" },
+  ];
+  
 
 export default function ProgramLecturers() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -31,7 +45,7 @@ export default function ProgramLecturers() {
   return (
     <section className="max-w-[1480px] mx-auto py-16 px-4 flex flex-col items-center gap-10">
       {/* Title */}
-      <h2 className="text-6xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
+      <h2 className="text-5xl font-medium font-['Halyard_Display'] text-Primary-1 leading-[100px]">
         Program Lecturer
       </h2>
 
@@ -44,7 +58,7 @@ export default function ProgramLecturers() {
               alt={lecturer.name}
               className="w-40 h-40 object-cover rounded-full"
             />
-            <p className="text-2xl font-light font-['Halyard_Display'] text-Neutral-6">{lecturer.name}</p>
+            <p className="text-1xl font-light font-['Halyard_Display'] text-Neutral-6 break-words">{lecturer.name}</p>
           </div>
         ))}
       </div>

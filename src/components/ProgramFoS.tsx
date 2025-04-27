@@ -8,7 +8,7 @@ export default function ProgramFoS() {
   return (
     <section className="w-full max-w-[1480px] mx-auto py-16 px-4 flex flex-col gap-14">
       {/* Title */}
-      <h2 className="text-Primary-1 text-6xl font-medium font-['Halyard_Display'] leading-[100px] text-center">
+      <h2 className="text-Primary-1 text-5xl font-medium font-['Halyard_Display'] leading-[100px] text-center">
         Field of Study
       </h2>
 
