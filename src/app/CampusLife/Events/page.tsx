@@ -1,8 +1,75 @@
 import Image from "next/image";
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 export default function Events() {
+  const events = [
+    {
+      id: 1,
+      date: "Jan 05",
+      title: "Series Brownbag 40 with Amin Mudzakkir",
+      image: "/campus_life/Brownbag-40.png",
+      link: "/path-to-event-1",
+    },
+    {
+      id: 2,
+      date: "Dec 28",
+      title: "Diseminasi Hasil Awal Penelitian Riset Jabar",
+      image: "/campus_life/event2.png",
+      link: "/path-to-event-2",
+    },
+    {
+      id: 3,
+      date: "Dec 20",
+      title: "Series Brownbag 39 with Muhammad Syukri",
+      image: "/campus_life/event3.png",
+      link: "/path-to-event-3",
+    },
+    {
+      id: 4,
+      date: "Dec 15",
+      title: "Series Brownbag 38 with Fathun Karib",
+      image: "/campus_life/event4.png",
+      link: "/path-to-event-4",
+    },
+    {
+      id: 5,
+      date: "Dec 14",
+      title: "The First Climate Talk with Michiel Schaeffer",
+      image: "/campus_life/event5.svg",
+      link: "/path-to-event-5",
+    },
+    {
+      id: 6,
+      date: "Dec 13",
+      title: "Series Brownbag 37 with Nathanael G. Sumaktoyo",
+      image: "/campus_life/event6.png",
+      link: "/path-to-event-6",
+    },
+    {
+      id: 7,
+      date: "Dec 08",
+      title: "Series Brownbag 36 with Aizat bin Khairi",
+      image: "/campus_life/event7.png",
+      link: "/path-to-event-7",
+    },
+    {
+      id: 8,
+      date: "Dec 06",
+      title: "Series Brownbag 35 with Arya Budi",
+      image: "/campus_life/event8.png",
+      link: "/path-to-event-8",
+    },
+    {
+      id: 9,
+      date: "Dec 01",
+      title: "Series Brownbag 34 with Okky Madasari",
+      image: "/campus_life/event9.png",
+      link: "/path-to-event-9",
+    },
+  ];
+
   return (
     <div className="w-full">
       <header>
@@ -24,385 +91,55 @@ export default function Events() {
 
       {/* Events Section */}
       <section className="py-5 bg-white-50 mb-16">
-        {/* Grid of Events with 3 cards per row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
-          {/* Event Card 1 */}
-          <a
-            href="/path-to-event-1" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Jan</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">05</p>
+          {events.map((event) => (
+            <Link key={event.id} href={event.link}>
+              <div
+                className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
+                style={{
+                  backgroundColor: "#F4FDFF",
+                  width: "100%",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                  display: "flex", // Flexbox to ensure proper alignment
+                  flexDirection: "column",
+                  height: "450px", // Set a fixed height for the card to maintain consistency
+                }}
+              >
+                <div className="flex w-full">
+                  {/* Left Date Section */}
+                  <div className="w-1/3 p-6 flex justify-center items-start">
+                    <div className="flex flex-col items-start justify-start pl-2">
+                      <p className="text-4xl font-bold text-[#00748D]">
+                        {event.date.split(" ")[0]}
+                      </p>
+                      <p className="text-3xl font-bold text-gray-600 mt-1">
+                        {event.date.split(" ")[1]}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Image Section */}
+                  <div className="relative mt-6 ml-6 w-[200px] h-[250px]">
+                    <Image
+                      src={event.image}
+                      alt={`Event ${event.id}`}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </div>
+                </div>
+
+                {/* Text Section Below Image */}
+                <div className="p-6 flex-grow">
+                  <h3 className="text-xl font-bold text-gray-800 mt-2">
+                    {event.title}
+                  </h3>
                 </div>
               </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/Brownbag-40.png"
-                  alt="Event 1"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 40 with Amin Mudzakkir
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 2 */}
-          <a
-            href="/path-to-event-2" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">28</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event2.png"
-                  alt="Event 2"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Diseminasi Hasil Awal Penelitian Riset Jabar
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 3 */}
-          <a
-            href="/path-to-event-3" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">20</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event3.png"
-                  alt="Event 3"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 39 with Muhammad Syukri
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 4 */}
-          <a
-            href="/path-to-event-4" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">15</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event4.png"
-                  alt="Event 4"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 38 with Fathun Karib
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 5 */}
-          <a
-            href="/path-to-event-5" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">14</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event5.svg"
-                  alt="Event 5"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                The First Climate Talk with Michiel Schaeffer
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 6 */}
-          <a
-            href="/path-to-event-6" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">13</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event6.png"
-                  alt="Event 6"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 37 with Nathanael G. Sumaktoyo
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 7 */}
-          <a
-            href="/path-to-event-7" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">08</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event7.png"
-                  alt="Event 7"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 36 with Aizat bin Khairi
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 8 */}
-          <a
-            href="/path-to-event-8" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">06</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event8.png"
-                  alt="Event 8"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 35 with Arya Budi
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 9 */}
-          <a
-            href="/path-to-event-9" 
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px", 
-              margin: "0 auto", 
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Dec</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">01</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/event9.png"
-                  alt="Event 9"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Series Brownbag 34 with Okky Madasari
-              </h3>
-            </div>
-          </a>
+            </Link>
+          ))}
         </div>
       </section>
 

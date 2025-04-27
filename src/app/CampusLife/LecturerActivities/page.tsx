@@ -1,8 +1,60 @@
 import Image from "next/image";
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-export default function Events() {
+export default function LecturerActivities() {
+  const events = [
+    {
+      id: 1,
+      date: "Feb 25",
+      title:
+        "Dr. Nia Deliana Explores Human Rights in the Geography of the East",
+      image: "/campus_life/LecturerAct1.jpeg",
+      link: "/path-to-event-1",
+    },
+    {
+      id: 2,
+      date: "Oct 24",
+      title:
+        "Moch Faisal Karim, Ph.D., published an article titled 'The Jakarta Post: Prabowo global gambit: The Role of his Foreign Ministry Team'",
+      image: "/campus_life/LecturerAct2.jpg",
+      link: "/path-to-event-2",
+    },
+    {
+      id: 3,
+      date: "Oct 24",
+      title:
+        "Prof. Komaruddin Hidayat, our Political Science Lecturer, published a book entitled ‘Theology of Hope’",
+      image: "/campus_life/Lecturer3.jpg",
+      link: "/path-to-event-3",
+    },
+    {
+      id: 4,
+      date: "Oct 20",
+      title:
+        "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, served as a speaker at The Jakarta Post YouTube channel",
+      image: "/campus_life/LecturerAct4.jpg",
+      link: "/path-to-event-4",
+    },
+    {
+      id: 5,
+      date: "Oct 20",
+      title:
+        "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, published a journal",
+      image: "/campus_life/LecturerAct5.jpg",
+      link: "/path-to-event-5",
+    },
+    {
+      id: 6,
+      date: "Oct 20",
+      title:
+        "Prof. Farish A. Noor, our Political Science Lecturer, served as a speaker in the YouTube video by NU Online",
+      image: "/campus_life/LecturerAct6.jpg",
+      link: "/path-to-event-6",
+    },
+  ];
+
   return (
     <div className="w-full">
       <header>
@@ -26,267 +78,55 @@ export default function Events() {
 
       {/* Events Section */}
       <section className="py-5 bg-white-50 mb-16">
-        {/* Grid of Events with 3 cards per row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
-          {/* Event Card 1 */}
-          <a
-            href="/path-to-event-1"
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Feb</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">25</p>
+          {events.map((event) => (
+            <Link key={event.id} href={event.link}>
+              <div
+                className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
+                style={{
+                  backgroundColor: "#F4FDFF",
+                  width: "100%",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                  display: "flex", 
+                  flexDirection: "column",
+                  height: "450px", 
+                }}
+              >
+                <div className="flex w-full">
+                  {/* Left Date Section */}
+                  <div className="w-1/3 p-6 flex justify-center items-start">
+                    <div className="flex flex-col items-start justify-start pl-2">
+                      <p className="text-4xl font-bold text-[#00748D]">
+                        {event.date.split(" ")[0]}
+                      </p>
+                      <p className="text-3xl font-bold text-gray-600 mt-1">
+                        {event.date.split(" ")[1]}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Image Section */}
+                  <div className="relative mt-6 ml-6 w-[200px] h-[250px]">
+                    <Image
+                      src={event.image}
+                      alt={`Event ${event.id}`}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </div>
+                </div>
+
+                {/* Text Section Below Image */}
+                <div className="p-6 flex-grow">
+                  <h3 className="text-xl font-bold text-gray-800 mt-2">
+                    {event.title}
+                  </h3>
                 </div>
               </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/LecturerAct1.jpeg"
-                  alt="Event 1"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Dr. Nia Deliana Explores Human Rights in the Geography of the
-                East
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 2 */}
-          <a
-            href="/path-to-event-2" // Ganti dengan URL tujuan yang sesuai
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Oct</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">24</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image Section */}
-            <div className="relative mr-6 ml-6">
-              <Image
-                src="/campus_life/LecturerAct2.jpg"
-                alt="Event 2"
-                layout="intrinsic"
-                width={360}
-                height={450}
-                objectFit="cover"
-                objectPosition="center top"
-              />
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-0">
-                Moch Faisal Karim, Ph.D., published an article titled The
-                Jakarta Post “Prabowo global gambit: The Role of his Foreign
-                Ministry Team”
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 3 */}
-          <a
-            href="/path-to-event-3" // Ganti dengan URL tujuan yang sesuai
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Oct</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">24</p>
-                </div>
-              </div>
-
-              {/* Right Image Section */}
-              <div className="w-2/3 relative mt-4 mr-6">
-                <Image
-                  src="/campus_life/Lecturer3.jpg"
-                  alt="Event 3"
-                  layout="intrinsic"
-                  width={360}
-                  height={450}
-                  objectFit="cover"
-                  objectPosition="center top"
-                />
-              </div>
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-10">
-                Prof. Komaruddin Hidayat, our Political Science Lecturer,
-                published a book entitled “Theology of Hope,”
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 4 */}
-          <a
-            href="/path-to-event-4" // Ganti dengan URL tujuan yang sesuai
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Oct</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">20</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image Section */}
-            <div className="relative mr-6 ml-6">
-              <Image
-                src="/campus_life/LecturerAct4.jpg"
-                alt="Event 4"
-                layout="intrinsic"
-                width={360}
-                height={450}
-                objectFit="cover"
-                objectPosition="center top"
-              />
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-0">
-                Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social
-                Sciences, served as a speaker at The Jakarta Post YouTube
-                channel
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 5 */}
-          <a
-            href="/path-to-event-5" // Ganti dengan URL tujuan yang sesuai
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Oct</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">20</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image Section */}
-            <div className="relative mr-6 ml-6">
-              <Image
-                src="/campus_life/LecturerAct5.jpg"
-                alt="Event 4"
-                layout="intrinsic"
-                width={360}
-                height={450}
-                objectFit="cover"
-                objectPosition="center top"
-              />
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social
-                Sciences, published a journal
-              </h3>
-            </div>
-          </a>
-
-          {/* Event Card 6 */}
-          <a
-            href="/path-to-event-6" // Ganti dengan URL tujuan yang sesuai
-            className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
-            style={{
-              backgroundColor: "#F4FDFF",
-              width: "100%",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}
-          >
-            <div className="flex">
-              {/* Left Date Section */}
-              <div className="w-1/3 p-6 flex justify-center items-start">
-                <div className="flex flex-col items-start justify-start pl-2">
-                  <p className="text-4xl font-bold text-[#00748D]">Oct</p>
-                  <p className="text-3xl font-bold text-gray-600 mt-1">20</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image Section */}
-            <div className="relative mr-6 ml-6">
-              <Image
-                src="/campus_life/LecturerAct6.jpg"
-                alt="Event 4"
-                layout="intrinsic"
-                width={360}
-                height={450}
-                objectFit="cover"
-                objectPosition="center top"
-              />
-            </div>
-
-            {/* Text Section Below Image */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mt-2">
-                Prof. Farish A. Noor, our Political Science Lecturer, served as
-                a speaker in the YouTube video by NU Online
-              </h3>
-            </div>
-          </a>
+            </Link>
+          ))}
         </div>
       </section>
 
