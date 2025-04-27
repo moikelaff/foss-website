@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PeopleCard from "./PeopleCard";
 
 export default function FacultyMember() {
@@ -14,9 +15,11 @@ export default function FacultyMember() {
           <PeopleCard />
         </div>
         <div className="flex justify-center mt-8">
-          <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition shadow-md">
-            See More
-          </button>
+          <Link href="/people/faculty-member">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition shadow-md">
+              See More
+            </button>
+          </Link>
         </div>
       </div>
     </section>

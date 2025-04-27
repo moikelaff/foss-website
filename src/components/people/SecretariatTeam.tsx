@@ -1,4 +1,5 @@
 import PeopleCard from "./PeopleCard";
+import Link from "next/link";
 
 export default function SecretariatTeam() {
   return (
@@ -14,9 +15,11 @@ export default function SecretariatTeam() {
           <PeopleCard />
         </div>
         <div className="flex justify-center mt-8">
-          <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition shadow-md">
-            See More
-          </button>
+          <Link href="/people/secretariat-team">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition shadow-md">
+              See More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
