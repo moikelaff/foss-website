@@ -11,6 +11,7 @@ const NavBar = () => {
   const menuItems = [
     {
       label: "About",
+      href: "/about-faculty",
       hasDropdown: true,
       subItems: [
         { label: "Faculty Profile", type: "item", href: "/about-faculty" },
@@ -37,15 +38,17 @@ const NavBar = () => {
     },
     {
       label: "Academic Programs",
+      href: "/academic-program", 
       hasDropdown: true,
       subItems: [
-        { label: "PhD in Political Science", type: "item"},
-        { label: "Master of Arts (MA) in Political Science", type: "item"},
-        { label: "Master in Public Policy focusing on Climate Change", type: "item"},
+        { label: "PhD in Political Science", type: "item", href: "/academic-program/phd-political-science"},
+        { label: "Master of Arts (MA) in Political Science", type: "item", href: "/academic-program/ma-political-science" },
+        { label: "Master in Public Policy focusing on Climate Change", type: "item", href: "/academic-program/master-public-policy" },
       ],
     },
     {
       label: "Research & Publications",
+      href: "/research", 
       hasDropdown: true,
       subItems: [
         {
@@ -66,6 +69,7 @@ const NavBar = () => {
     },
     {
       label: "Campus Life",
+      href: "/campus-life", // Add a href for main menu item
       hasDropdown: true,
       subItems: [
         "Events",
@@ -97,16 +101,18 @@ const NavBar = () => {
             onMouseEnter={() => setOpenDropdown(index)}
             onMouseLeave={() => setOpenDropdown(null)}
           >
-            <button
-              className={`flex items-center text-[16px] space-x-1 transition-colors ${
-                openDropdown === index
-                  ? "text-[#848484]"
-                  : "hover:text-brandNavy"
-              }`}
-            >
-              <span>{item.label}</span>
-              {item.hasDropdown && <ChevronDown size={16} />}
-            </button>
+            <Link href={item.href}> {/* Wrap the label in a Link */}
+              <button
+                className={`flex items-center text-[16px] space-x-1 transition-colors ${
+                  openDropdown === index
+                    ? "text-[#848484]"
+                    : "hover:text-brandNavy"
+                }`}
+              >
+                <span>{item.label}</span>
+                {item.hasDropdown && <ChevronDown size={16} />}
+              </button>
+            </Link>
 
             {/* Dropdown */}
             {openDropdown === index && (
