@@ -10,63 +10,54 @@ export default function Events() {
       date: "Jan 05",
       title: "Series Brownbag 40 with Amin Mudzakkir",
       image: "/campus_life/Brownbag-40.png",
-      link: "/path-to-event-1",
     },
     {
       id: 2,
       date: "Dec 28",
       title: "Diseminasi Hasil Awal Penelitian Riset Jabar",
       image: "/campus_life/event2.png",
-      link: "/path-to-event-2",
     },
     {
       id: 3,
       date: "Dec 20",
       title: "Series Brownbag 39 with Muhammad Syukri",
       image: "/campus_life/event3.png",
-      link: "/path-to-event-3",
     },
     {
       id: 4,
       date: "Dec 15",
       title: "Series Brownbag 38 with Fathun Karib",
       image: "/campus_life/event4.png",
-      link: "/path-to-event-4",
     },
     {
       id: 5,
       date: "Dec 14",
       title: "The First Climate Talk with Michiel Schaeffer",
       image: "/campus_life/event5.svg",
-      link: "/path-to-event-5",
     },
     {
       id: 6,
       date: "Dec 13",
       title: "Series Brownbag 37 with Nathanael G. Sumaktoyo",
       image: "/campus_life/event6.png",
-      link: "/path-to-event-6",
     },
     {
       id: 7,
       date: "Dec 08",
       title: "Series Brownbag 36 with Aizat bin Khairi",
       image: "/campus_life/event7.png",
-      link: "/path-to-event-7",
     },
     {
       id: 8,
       date: "Dec 06",
       title: "Series Brownbag 35 with Arya Budi",
       image: "/campus_life/event8.png",
-      link: "/path-to-event-8",
     },
     {
       id: 9,
       date: "Dec 01",
       title: "Series Brownbag 34 with Okky Madasari",
       image: "/campus_life/event9.png",
-      link: "/path-to-event-9",
     },
   ];
 
@@ -93,9 +84,10 @@ export default function Events() {
       <section className="py-5 bg-white-50 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
           {events.map((event) => (
-            <Link 
-            key={event.id} 
-            href={event.link}>
+            <Link
+              key={event.id}
+              href={`/CampusLife/Events/DetailedEvents/${event.id}`} 
+            >
               <div
                 className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
                 style={{
@@ -103,9 +95,9 @@ export default function Events() {
                   width: "100%",
                   maxWidth: "600px",
                   margin: "0 auto",
-                  display: "flex", 
+                  display: "flex",
                   flexDirection: "column",
-                  height: "450px", 
+                  height: "450px",
                 }}
               >
                 <div className="flex w-full">
