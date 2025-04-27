@@ -10,14 +10,12 @@ export default function AlumniActivities() {
       date: "Jan 10",
       title: "3 Minutes Thesis by PhD students of FoSS",
       image: "/campus_life/AlumniAct1.jpg",
-      link: "/path-to-event-1",
     },
     {
       id: 2,
       date: "Jun 06",
       title: "Climate Talk 4 with Aichiro",
       image: "/campus_life/AlumniAct2.jpg",
-      link: "/path-to-event-2",
     },
     {
       id: 3,
@@ -25,7 +23,6 @@ export default function AlumniActivities() {
       title:
         "Philips J. Vermonte, Ph.D., served as a speaker in the Roundtable event hosted by the National Security College (NSC) at Australian National University (ANU) on September 12, 2024.",
       image: "/campus_life/AlumniAct3.jpg",
-      link: "/path-to-event-3",
     },
     {
       id: 4,
@@ -33,7 +30,6 @@ export default function AlumniActivities() {
       title:
         "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, served as a speaker at The Jakarta Post YouTube channel",
       image: "/campus_life/LecturerAct4.jpg",
-      link: "/path-to-event-4",
     },
     {
       id: 5,
@@ -41,7 +37,6 @@ export default function AlumniActivities() {
       title:
         "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, published a journal",
       image: "/campus_life/LecturerAct5.jpg",
-      link: "/path-to-event-5",
     },
     {
       id: 6,
@@ -49,7 +44,6 @@ export default function AlumniActivities() {
       title:
         "Prof. Farish A. Noor, our Political Science Lecturer, served as a speaker in the YouTube video by NU Online",
       image: "/campus_life/LecturerAct6.jpg",
-      link: "/path-to-event-6",
     },
   ];
 
@@ -78,7 +72,10 @@ export default function AlumniActivities() {
       <section className="py-5 bg-white-50 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
           {events.map((event) => (
-            <Link key={event.id} href={event.link}>
+            <Link
+              key={event.id}
+              href={`/CampusLife/AlumniActivities/DetailedAlumniActivities/${event.id}`} // Updated href to point to dynamic [id] path
+            >
               <div
                 className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
                 style={{

@@ -11,7 +11,6 @@ export default function LecturerActivities() {
       title:
         "Dr. Nia Deliana Explores Human Rights in the Geography of the East",
       image: "/campus_life/LecturerAct1.jpeg",
-      link: "/path-to-event-1",
     },
     {
       id: 2,
@@ -19,7 +18,6 @@ export default function LecturerActivities() {
       title:
         "Moch Faisal Karim, Ph.D., published an article titled 'The Jakarta Post: Prabowo global gambit: The Role of his Foreign Ministry Team'",
       image: "/campus_life/LecturerAct2.jpg",
-      link: "/path-to-event-2",
     },
     {
       id: 3,
@@ -27,7 +25,6 @@ export default function LecturerActivities() {
       title:
         "Prof. Komaruddin Hidayat, our Political Science Lecturer, published a book entitled ‘Theology of Hope’",
       image: "/campus_life/Lecturer3.jpg",
-      link: "/path-to-event-3",
     },
     {
       id: 4,
@@ -35,7 +32,6 @@ export default function LecturerActivities() {
       title:
         "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, served as a speaker at The Jakarta Post YouTube channel",
       image: "/campus_life/LecturerAct4.jpg",
-      link: "/path-to-event-4",
     },
     {
       id: 5,
@@ -43,7 +39,6 @@ export default function LecturerActivities() {
       title:
         "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, published a journal",
       image: "/campus_life/LecturerAct5.jpg",
-      link: "/path-to-event-5",
     },
     {
       id: 6,
@@ -51,7 +46,6 @@ export default function LecturerActivities() {
       title:
         "Prof. Farish A. Noor, our Political Science Lecturer, served as a speaker in the YouTube video by NU Online",
       image: "/campus_life/LecturerAct6.jpg",
-      link: "/path-to-event-6",
     },
   ];
 
@@ -80,7 +74,10 @@ export default function LecturerActivities() {
       <section className="py-5 bg-white-50 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-auto max-w-7xl px-4">
           {events.map((event) => (
-            <Link key={event.id} href={event.link}>
+            <Link
+              key={event.id}
+              href={`/CampusLife/LecturerActivities/DetailedLecturerActivities/${event.id}`}
+            >
               <div
                 className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
                 style={{
@@ -88,9 +85,9 @@ export default function LecturerActivities() {
                   width: "100%",
                   maxWidth: "600px",
                   margin: "0 auto",
-                  display: "flex", 
+                  display: "flex",
                   flexDirection: "column",
-                  height: "450px", 
+                  height: "450px",
                 }}
               >
                 <div className="flex w-full">

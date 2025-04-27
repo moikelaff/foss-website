@@ -106,9 +106,9 @@ export default function Events() {
                   width: "100%",
                   maxWidth: "600px",
                   margin: "0 auto",
-                  display: "flex", // Use flexbox to ensure proper alignment
+                  display: "flex", 
                   flexDirection: "column",
-                  height: "450px", // Set a fixed height for the card to maintain consistency
+                  height: "450px", 
                 }}
               >
                 <div className="flex w-full">
