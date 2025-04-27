@@ -47,7 +47,7 @@ const NavBar = () => {
     {
       label: "Campus Life",
       hasDropdown: true,
-      subItems: ["Events", "Summer Training on Qualitative and Quantitative Methods (STQ2M)", "Student Activities", "Lecturer Activities"].map((item) => ({ label: item, type: "item" })),
+      subItems: ["Events","Student Activities", "Lecturer Activities", "Alumni Activities"].map((item) => ({ label: item, type: "item" })),
     },
   ];
 

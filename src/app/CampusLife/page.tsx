@@ -55,7 +55,7 @@ export default function CampusLife() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <a
-            href="#"
+            href="CampusLife/Events"
             className="mt-6 text-blue-800 font-semibold flex items-center"
           >
             LEARN MORE <span className="ml-2">&#9679;</span>
@@ -103,7 +103,7 @@ export default function CampusLife() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <a
-            href="#"
+            href="CampusLife/StudentActivities"
             className="mt-6 text-blue-700 font-semibold flex items-center"
           >
             LEARN MORE <span className="ml-2">&#9679;</span>
