@@ -16,10 +16,10 @@ export default function AdmissionsPage() {
         <AdmissionsHero />
         <ProgramsSection />
         <FAQSection />
-
       </main>
       <footer>
         <Footer />
-      </footer></>
+      </footer>
+    </>
   );
 }
