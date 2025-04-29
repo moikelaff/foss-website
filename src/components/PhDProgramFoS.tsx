@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-export default function ProgramFoS() {
+export default function PhDProgramFoS() {
   const [hoveredCard, setHoveredCard] = useState<null | string>(null);
 
   return (

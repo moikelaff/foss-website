@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProgramDegreeRequirements() {
+export default function PhDProgramDegreeRequirements() {
   return (
     <section className="w-full bg-sky-950 py-16 px-20 flex justify-center">
       <div className="max-w-[1480px] w-full flex flex-row items-center gap-14">
