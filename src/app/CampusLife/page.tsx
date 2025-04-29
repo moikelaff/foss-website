@@ -18,14 +18,15 @@ export default function CampusLife() {
             alt="Campus Life"
             fill
             objectFit="cover"
+            objectPosition="top"
             className="absolute top-0 left-0"
           />
         </div>
         <div className="text-center text-black px-4 py-8">
           <h1 className="text-5xl font-bold">Campus Life</h1>
           <p className="text-lg mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Explore your potential, connect with like-minded individuals, and
+            make your mark at UIII
           </p>
         </div>
       </section>
@@ -51,8 +52,10 @@ export default function CampusLife() {
           {/* Added padding-left (pl-8) */}
           <h2 className="text-5xl font-bold text-gray-800">Events</h2>
           <p className="text-lg text-gray-700 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Discover endless opportunities to expand your knowledge and explore
+            new passions through expert-led events. Explore the upcoming events
+            and take advantage of these valuable opportunities to enrich your
+            academic and personal growth.
           </p>
           <a
             href="CampusLife/Events"
@@ -99,8 +102,10 @@ export default function CampusLife() {
             Student Activities
           </h2>
           <p className="text-lg text-gray-800 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            UIII students are actively shaping their academic journey by
+            pursuing their passions and achieving remarkable milestones. Dive
+            into these inspiring stories of our students’ accomplishments and
+            see how they’re making an impact!
           </p>
           <a
             href="CampusLife/StudentActivities"
@@ -146,8 +151,10 @@ export default function CampusLife() {
             Lecturer Activities
           </h2>
           <p className="text-lg text-gray-800 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            UIII’s lecturers are experts in the social sciences, with a wealth
+            of experience, remarkable achievements, and inspiring stories to
+            share. Explore their journeys and be inspired by their dedication
+            and expertise!
           </p>
           <a
             href="/CampusLife/LecturerActivities"
@@ -193,8 +200,10 @@ export default function CampusLife() {
             Alumni Activities
           </h2>
           <p className="text-lg text-gray-800 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            UIII alumni continue to make an impact in various fields, staying
+            connected with the university through meaningful activities and
+            collaborations. Explore the inspiring journeys of our alumni and
+            discover how they contribute to shaping the future!
           </p>
           <a
             href="CampusLife/AlumniActivities"

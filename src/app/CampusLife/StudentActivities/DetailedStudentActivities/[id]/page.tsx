@@ -10,7 +10,7 @@ const EventDetail = () => {
   // Ensure all event ids are strings to avoid type issues
   const events = [
     {
-      id: "1", // Keep all ids as strings
+      id: "1", 
       date: "Dec 05",
       title:
         "Elis Nurhayati, our MPP specializing in Climate Change student, wrote an article in The Jakarta Post",

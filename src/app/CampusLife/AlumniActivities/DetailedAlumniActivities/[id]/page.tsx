@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 
 const AlumniActivityDetail = () => {
-  const { id } = useParams(); // Get the `id` from the URL
+  const { id } = useParams();
 
   const events = [
     {
