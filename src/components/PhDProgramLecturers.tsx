@@ -22,7 +22,7 @@ const lecturers = [
   ];
   
 
-export default function ProgramLecturers() {
+export default function PhDProgramLecturers() {
   const [currentPage, setCurrentPage] = useState(0);
   const lecturersPerPage = 5;
   const totalPages = Math.ceil(lecturers.length / lecturersPerPage);

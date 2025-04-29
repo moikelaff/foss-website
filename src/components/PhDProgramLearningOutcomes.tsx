@@ -1,7 +1,7 @@
 // src/components/PHDPoliticalScience.tsx
 import React from "react";
 
-export default function ProgramBanner() {
+export default function PhDProgramLearningOutcomes() {
   return (
     <section className="max-w-[1480px] mx-auto py-16 px-20 flex flex-col items-start gap-14">
 
