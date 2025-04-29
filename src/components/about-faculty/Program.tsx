@@ -88,7 +88,7 @@ export default function Program() {
                 evaluating public policies to tackle pressing challenges of
                 climate change.
               </p>
-              <Link href="/academic-program/mpp-climate-change">
+              <Link href="/academic-program/master-public-policy">
                 <button className="px-4 py-2 bg-brandNavy text-white font-light rounded-lg hover:bg-[#005c74] transition mt-4">
                   Learn More
                 </button>
