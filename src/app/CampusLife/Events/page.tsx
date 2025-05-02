@@ -10,6 +10,8 @@ export default function Events() {
       date: "Jan 05",
       title: "Series Brownbag 40 with Amin Mudzakkir",
       image: "/campus_life/Brownbag-40.png",
+      description:
+        "The first Brownbag Series in 2024! <br/> Join us for our 40th Brownbag Series. In this engaging discussion, we’ll delve into how Islamic feminism’s intersection with the political economy in Indonesia is reshaping the conventional split between the politics of recognition and redistribution. <br/> This session, titled ‘The Paradox of Feminism in Indonesia:Political Economy, Muslim Piety, and Authority,’ will feature Amin Mudzakkir, our COMPOSE fellow and a researcher at PRW BRIN, Indonesia.",
     },
     {
       id: 2,
