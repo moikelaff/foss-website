@@ -69,7 +69,12 @@ const NavBar = () => {
           type: "item",
           href: "/research-and-publication/compose",
         },
-        { label: "COMPOSE Working Paper", type: "item", indent: true },
+        {
+          label: "COMPOSE Working Paper",
+          type: "item",
+          indent: true,
+          href: "/research-and-publication/working-paper-compose",
+        },
         {
           label:
             "National Survey Varieties of Muslim Religious Practices and Views in Indonesia",

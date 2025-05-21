@@ -22,7 +22,7 @@ export default function PeopleSection() {
           <p className="text-xl text-[#00748D] mb-6">
             Head of the Ph.D. in Political Science Program
           </p>
-          <p className="text-gray-700 whitespace-pre-line">
+          <p className="text-gray-700 whitespace-pre-line text-justify">
             is the head of the MPP Program in Climate Change at UIII. He also
             coordinates the Center for Climate and Sustainable Finance at the
             University of Indonesia (CCSF UI). He holds a Ph.D. in Economics,

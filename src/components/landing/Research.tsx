@@ -13,14 +13,14 @@ export default function Research() {
       date: "October 21, 2024",
     },
     {
-      image: "/landing-page/ClassEnvironment4.png",
+      image: "/landing-page/asia-climate-change.jpg",
       title:
         "Adapting East and Southern Africa’s livestock to climate change: a decision making under deep uncertainty-based approach for effective actions",
       author: "Prof. Michiel Schaeffer",
       date: "October 12, 2024",
     },
     {
-      image: "/landing-page/cover-research.png",
+      image: "/landing-page/tunisian-democracy.jpg",
       title:
         "Tunisian Democracy at a Crossroads: A Comparative Analysis of Beji Caid Essebsi and Kais Saied Regimes",
       author: "Nizar Lukman",
@@ -75,12 +75,12 @@ export default function Research() {
       {/* Scrollable Cards */}
       <div
         ref={scrollRef}
-        className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar px-6 pb-3"
+        className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar px-6 pb-6"
       >
         {researchList.map((item, index) => (
           <div
             key={index}
-            className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 group flex-shrink-0 w-[360px]"
+            className="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 group flex-shrink-0 w-[360px] transition-transform duration-300 hover:scale-105"
           >
             <img
               src={item.image}

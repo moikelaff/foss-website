@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Header() {
   const images = [
     "/landing-page/ClassEnvironment.jpeg",
-    "/landing-page/LectureTeaching.png",
     "/landing-page/Building.png",
     "/landing-page/ClassEnvironment2.jpeg",
     "/landing-page/LectureTeaching2.png",

@@ -6,40 +6,32 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Headline() {
   const headlines = [
     {
-      date: "May 16, 2025",
-      title:
-        "Insightful Engagement on the National Zakat Index: ESA UIII Successfully Concludes 2nd Research Community Session",
-      image: "/landing-page/ClassEnvironment3.png",
-    },
-    {
-      date: "March 11, 2025",
-      title:
-        "MFin Students Gain Firsthand Insights into Carbon Trading at IDX Carbon",
-      image: "/landing-page/LectureTeaching2.png",
-    },
-    {
       date: "February 20, 2025",
       title:
         "Professor Dian Masyita Honored as a Changemaker in Empowering Communities",
       image: "/landing-page/LectureTeaching.png",
     },
     {
+      date: "March 11, 2025",
+      title: "The 3rd Symposium on Muslim Politics in World Society",
+      image: "/landing-page/headline-3.png",
+    },
+    {
       date: "May 16, 2025",
       title:
-        "Insightful Engagement on the National Zakat Index: ESA UIII Successfully Concludes 2nd Research Community Session",
+        "Insightful Engagement on the National Zakat Index: ESA UIII Successfully Concludes 2nd Research",
       image: "/landing-page/ClassEnvironment3.png",
     },
     {
       date: "March 11, 2025",
-      title:
-        "MFin Students Gain Firsthand Insights into Carbon Trading at IDX Carbon",
-      image: "/landing-page/LectureTeaching2.png",
+      title: "Brownbag #61 with Pablito and Fuad",
+      image: "/landing-page/headline-2.png",
     },
     {
-      date: "February 20, 2025",
+      date: "May 16, 2025",
       title:
-        "Professor Dian Masyita Honored as a Changemaker in Empowering Communities",
-      image: "/landing-page/LectureTeaching.png",
+        "Fullboard Meeting for End of the Year Evaluation And 2025 Activity Planning",
+      image: "/landing-page/headline-1.png",
     },
   ];
 
