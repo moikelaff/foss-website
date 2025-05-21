@@ -44,7 +44,7 @@ export default function Students() {
                 <img
                   src={student.image}
                   alt={student.name}
-                  className="w-full aspect-[4/4] object-cover rounded-t-xl"
+                  className="w-full aspect-[4/4] object-cover object-top rounded-t-xl"
                 />
                 <div className="h-[90px] text-left px-5 py-3">
                   <h3 className="text-base font-medium">{student.name}</h3>
