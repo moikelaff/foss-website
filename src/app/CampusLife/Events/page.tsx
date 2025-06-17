@@ -72,11 +72,15 @@ export default function Events() {
       {/* Hero Section */}
       <section className="py-4 bg-white-50">
         <div className="text-center text-black px-4 py-8">
-          <h1 className="text-6xl font-bold">Events</h1>
+          <h1 className="text-7xl font-medium font-['Halyard_Display'] text-sky-950">
+            Events
+          </h1>
         </div>
         <div className="pl-32">
-          <h2 className="text-4xl font-bold text-gray-800">Upcoming Events</h2>
-          <p className="text-lg text-gray-600 mt-4">
+          <h2 className="text-4xl font-medium font-['Halyard_Display'] text-sky-950 mt-4">
+            Upcoming Events
+          </h2>
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             See upcoming events from UIII
           </p>
         </div>
@@ -88,7 +92,7 @@ export default function Events() {
           {events.map((event) => (
             <Link
               key={event.id}
-              href={`/CampusLife/Events/DetailedEvents/${event.id}`} 
+              href={`/CampusLife/Events/DetailedEvents/${event.id}`}
             >
               <div
                 className="rounded-2xl shadow-2xl overflow-hidden border border-gray-300 mb-8 transition-shadow duration-300 hover:shadow-[0px_4px_10px_rgba(0,116,141,0.5)]"
@@ -106,10 +110,10 @@ export default function Events() {
                   {/* Left Date Section */}
                   <div className="w-1/3 p-6 flex justify-center items-start">
                     <div className="flex flex-col items-start justify-start pl-2">
-                      <p className="text-4xl font-bold text-[#00748D]">
+                      <p className="text-4xl font-bold font-['Halyard_Display'] text-[#00748D]">
                         {event.date.split(" ")[0]}
                       </p>
-                      <p className="text-3xl font-bold text-gray-600 mt-1">
+                      <p className="text-3xl font-bold font-['Halyard_Display'] text-sky-950 mt-1">
                         {event.date.split(" ")[1]}
                       </p>
                     </div>
@@ -129,7 +133,7 @@ export default function Events() {
 
                 {/* Text Section Below Image */}
                 <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-gray-800 mt-2">
+                  <h3 className="text-xl font-medium font-['Halyard_Display'] text-sky-950 mt-2">
                     {event.title}
                   </h3>
                 </div>

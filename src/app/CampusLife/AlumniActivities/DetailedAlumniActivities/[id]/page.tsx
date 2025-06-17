@@ -95,30 +95,32 @@ const AlumniActivityDetail = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-start">
             <div className="flex flex-col items-start">
-              <p className="text-4xl font-bold text-[#00748D]">
+              <p className="text-4xl font-bold font-['Halyard_Display'] text-[#00748D]">
                 {event.date.split(" ")[0]}
               </p>
-              <p className="text-3xl font-bold text-gray-600">
+              <p className="text-3xl font-bold font-['Halyard_Display'] text-sky-950">
                 {event.date.split(" ")[1]}
               </p>
             </div>
 
             <div className="w-1/2 ml-8">
-                          <Image
-                            src={event.image}
-                            alt={`Event ${event.id}`}
-                            width={500}
-                            height={500}
-                            objectFit="cover"
-                            objectPosition="center"
-                          />
-                        </div>
+              <Image
+                src={event.image}
+                alt={`Event ${event.id}`}
+                width={500}
+                height={500}
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-800 mt-8">
+          <h2 className="text-4xl font-medium font-['Halyard_Display'] text-sky-950 mt-8">
             {event.title}
           </h2>
-          <p className="text-lg text-gray-600 mt-4">{event.description}</p>
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
+            {event.description}
+          </p>
         </div>
       </section>
 

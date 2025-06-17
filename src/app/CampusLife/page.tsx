@@ -100,7 +100,7 @@ export default function CampusLife() {
         <div className="w-1/2 pl-16">
           {" "}
           {/* Added padding-left (pl-8) */}
-          <h2 className="text-6xl font-['Halyard_Display'] text-sky-950 font-medium">
+          <h2 className="text-7xl font-['Halyard_Display'] text-sky-950 font-medium">
             Student Activities
           </h2>
           <p className="text-lg text-gray-800 mt-4 font-['Halyard_Display'] text-sky-950">
