@@ -9,10 +9,10 @@ export default function AdmissionsHero() {
       {/* Gradient Overlay */}
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#D9D9D9] to-transparent z-50"></div>
 
-        <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="font-halyard max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Content */}
             <div className="flex flex-col justify-center">
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-[500] text-gray-900">
                 Academic Programs
             </h1>
             <p className="mt-20 mr-20 text-[18px] text-gray-700 text-justify">
@@ -24,7 +24,7 @@ export default function AdmissionsHero() {
                 fields.
             </p>
             <Link href="https://uiii.ac.id/admissions" target="_blank" rel="noopener norefferer">
-                <button className="w-[190px] h-[68px] border-[4px] border-[#01395E] bg-transparent mt-[30px] px-4 py-2 text-[#01395E] text-[24px] font-semibold rounded-lg transition-colors duration-300 hover:border-blue-600 hover:text-blue-600">
+                <button className="w-[190px] h-[68px] border-[4px] border-[#01395E] bg-transparent mt-[30px] px-4 py-2 text-[#01395E] text-[24px] font-[500] rounded-lg transition-colors duration-300 hover:border-blue-600 hover:text-blue-600">
                 Apply Now
                 </button>
               </Link>
