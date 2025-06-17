@@ -16,7 +16,7 @@ export default function AcademicProgramPage() {
         <nav>
           <NavBar />
         </nav>
-        <main>
+        <main className="font-halyard">
           <ProgramBanner/>
           <ProgramOverview/>
           <ProgramSignificance/>
