@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { Link } from "lucide-react";
 
 export default function CampusLife() {
   return (
@@ -59,11 +60,10 @@ export default function CampusLife() {
             and take advantage of these valuable opportunities to enrich your
             academic and personal growth.
           </p>
-          <a
-            href="CampusLife/Events"
-            className="mt-6 text-blue-800 font-['Halyard_Display'] flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/Events">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -109,11 +109,10 @@ export default function CampusLife() {
             into these inspiring stories of our students’ accomplishments and
             see how they’re making an impact!
           </p>
-          <a
-            href="CampusLife/StudentActivities"
-            className="mt-6 text-blue-700 font-['Halyard_Display'] flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/StudentActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -158,11 +157,10 @@ export default function CampusLife() {
             share. Explore their journeys and be inspired by their dedication
             and expertise!
           </p>
-          <a
-            href="/CampusLife/LecturerActivities"
-            className="mt-6 text-blue-700 font-['Halyard_Display'] flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/LecturerActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -207,11 +205,10 @@ export default function CampusLife() {
             collaborations. Explore the inspiring journeys of our alumni and
             discover how they contribute to shaping the future!
           </p>
-          <a
-            href="CampusLife/AlumniActivities"
-            className="mt-6 text-blue-700 font-['Halyard_Display'] flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/AlumniActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}

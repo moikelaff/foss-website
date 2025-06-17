@@ -324,7 +324,7 @@ const DetailedEvent = () => {
         <div className="flex justify-center mt-8">
           <a
             href={event.registerLink}
-            className="inline-block px-8 py-3 text-lg font-semibold text-white bg-[#00748D] rounded-xl hover:bg-[#005f6a]"
+            className="inline-block px-8 py-3 text-lg font-halyard text-white bg-[#00748D] rounded-xl hover:bg-[#005f6a]"
           >
             Register For Event
           </a>

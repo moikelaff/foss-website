@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-full h-[310px] mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Left Section */}
         <div className="mb-6 md:mb-0">
-          <h3 className="text-[20px] font-medium">
+          <h3 className="text-[20px] font-medium mt-6">
             Faculty of Social Sciences <br /> Universitas Islam Internasional
             Indonesia
           </h3>
@@ -28,7 +28,7 @@ const Footer = () => {
 
         {/* Right Section */}
         <div className="flex flex-col items-start w-[348px] h-[339px]">
-          <h4 className="text-[20px] font-medium">Email Us</h4>
+          <h4 className="text-[20px] font-medium mt-6">Email Us</h4>
           <div className="pt-[40px] pb-[40px] text-sm text-left">
             <a
               href="mailto:social.sciences@uiii.ac.id"

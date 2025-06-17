@@ -10,19 +10,19 @@ const AlumniActivityDetail = () => {
   const events = [
     {
       id: "1",
-      date: "Jan 10",
-      title: "3 Minutes Thesis by PhD students of FoSS",
+      date: "Jun 05",
+      title: "Collecting, Classifying, and Analyzing Textual Data Using R",
       description:
         "PhD students of the Faculty of Social Sciences (FoSS) participated in a 3-minute thesis competition, presenting their research in a concise and engaging format.",
-      image: "/campus_life/AlumniAct1.jpg",
+      image: "/campus_life/AlumniAct20.png",
     },
     {
       id: "2",
-      date: "Jun 06",
-      title: "Climate Talk 4 with Aichiro",
+      date: "Jul 01",
+      title: "Comparative Historical Analysis in the Social Sciences",
       description:
         "Aichiro delivered a powerful talk on the role of climate change in contemporary global politics, offering insights into how international collaborations can address this pressing issue.",
-      image: "/campus_life/AlumniAct2.jpg",
+      image: "/campus_life/AlumniAct21.jpg",
     },
     {
       id: "3",
@@ -103,15 +103,16 @@ const AlumniActivityDetail = () => {
               </p>
             </div>
 
-            <div className="relative w-[200px] h-[250px] mt-6 ml-6">
-              <Image
-                src={event.image}
-                alt={`Event ${event.id}`}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
+            <div className="w-1/2 ml-8">
+                          <Image
+                            src={event.image}
+                            alt={`Event ${event.id}`}
+                            width={500}
+                            height={500}
+                            objectFit="cover"
+                            objectPosition="center"
+                          />
+                        </div>
           </div>
 
           <h2 className="text-4xl font-bold text-gray-800 mt-8">

@@ -105,15 +105,16 @@ const LecturerActivityDetail = () => {
               </p>
             </div>
 
-            <div className="relative w-[200px] h-[250px] mt-6 ml-6">
-              <Image
-                src={event.image}
-                alt={`Event ${event.id}`}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
+            <div className="w-1/2 ml-8">
+                          <Image
+                            src={event.image}
+                            alt={`Event ${event.id}`}
+                            width={500}
+                            height={500}
+                            objectFit="cover"
+                            objectPosition="center"
+                          />
+                        </div>
           </div>
 
           <h2 className="text-4xl font-bold text-gray-800 mt-8">
