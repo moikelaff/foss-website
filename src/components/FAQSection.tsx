@@ -47,7 +47,7 @@ const FAQSection = () => {
     }, [openIndex]); // Runs when openIndex changes
 
   return (
-    <div className="max-w-full min-h-[100vh] mx-auto py-[100px] px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-[100px]">
+    <div className="font-halyard max-w-full min-h-[100vh] mx-auto py-[100px] px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-[100px]">
       {/* Left: FAQ Content */}
       <div className="md:w-2/3">
         <h2 className="text-[75px] font-regular mb-[50px]">How may we assist you?</h2>
@@ -62,7 +62,7 @@ const FAQSection = () => {
               <motion.span
                 animate={{ rotate: openIndex === index ? 45 : 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
-                className="text-[40px] font-light"
+                className="font-halyard text-[40px] font-light"
               >
                 +
               </motion.span>
