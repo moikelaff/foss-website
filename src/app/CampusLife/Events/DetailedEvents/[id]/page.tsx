@@ -14,7 +14,7 @@ const DetailedEvent = () => {
       title: "Series Brownbag 40 with Amin Mudzakkir",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             The first Brownbag Series in 2024!
             <br />
             Join us for our 40th Brownbag Series. In this engaging discussion,
@@ -26,7 +26,7 @@ const DetailedEvent = () => {
             Political Economy, Muslim Piety, and Authority,’ will feature Amin
             Mudzakkir, our COMPOSE fellow and a researcher at PRW BRIN,
             Indonesia.
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -40,12 +40,12 @@ const DetailedEvent = () => {
       title: "Diseminasi Hasil Awal Penelitian Riset Jabar",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             Yuk, gabung dalam diskusi tentang tantangan pembangunan ekonomi dan
             sosial di Jawa Barat!
             <br /> Kegiatan ini akan membahas hasil riset dan mencari solusi
             untuk Jawa Barat yang lebih maju.
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -59,7 +59,7 @@ const DetailedEvent = () => {
       title: "Brownbag 39 with Muhammad Syukri",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             Let’s explore how policy changes impact village autonomy and green
             initiatives!
             <br /> Discover how the Indonesian government, led by Jokowi,
@@ -72,7 +72,7 @@ const DetailedEvent = () => {
             Environmental Sustainability in Indonesia’ featuring Muhammad
             Syukri, our COMPOSE fellow and Senior Researcher at The SMERU
             Research Institute, Indonesia.
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -86,7 +86,7 @@ const DetailedEvent = () => {
       title: "Brownbag 38 with Fathun Karib",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             How can the concept of “Just Transition” be redefined to ensure
             justice for marginalized groups in Indonesia and other Global South
             countries, addressing the limitations and potential biases embedded
@@ -97,7 +97,7 @@ const DetailedEvent = () => {
             Sciences, Universitas Islam Negeri (UIN) Syarif Hidayatullah
             Jakarta, in Brownbag Series 38 titled “Justice for Whom?: Just
             Transition and the Global South.”
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -111,7 +111,7 @@ const DetailedEvent = () => {
       title: "The First Climate Talk with Michiel Schaeffer",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             The Conference of the Parties (COP) to the UN Framework Convention
             on Climate Change (UNFCCC) is an international climate summit held
             annually. At COPs, world leaders gather to collaborate on solutions
@@ -122,7 +122,7 @@ const DetailedEvent = () => {
             Advisor at Climate Analytics in Germany, just returned from the
             conference. In Dubai, he presented the Global Mitigation Potential
             Atlas, followed by a panel discussion.
-          </p>
+          </div>
         </>
       ),
       time: "09:30 - 11:00 AM JKT",
@@ -136,7 +136,7 @@ const DetailedEvent = () => {
       title: "Brownbag 37 with Nathanael G. Sumaktoyo",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             How do houses of worship, especially mosques in Indonesia, shape not
             only the beliefs of their congregations but also influence the
             political ideologies of their surrounding communities?
@@ -144,7 +144,7 @@ const DetailedEvent = () => {
             assistant professor at the University of Singapore, in Brownbag
             Series 37 titled “Political Theory, House of Worship, and Indonesian
             Mosque.”
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -158,7 +158,7 @@ const DetailedEvent = () => {
       title: "Brownbag 36 with Aizat bin Khairi",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             How do community-based organizations (CBOs) initiated by Muslim
             Rohingya refugees in Malaysia navigate legal barriers and cultural
             adaptation challenges? What role does self-resilience play in their
@@ -166,7 +166,7 @@ const DetailedEvent = () => {
             discuss this with Aizat bin Khairi from Universiti Kuala Lumpur in
             Brownbag Series 36 titled “The Path towards Inclusivity: CBOs and
             Rohingya in Malaysia.”
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -180,7 +180,7 @@ const DetailedEvent = () => {
       title: "Brownbag 35 with Arya Budi",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             People supporting different presidential candidates have strong
             opinions. Still, there hasn’t been enough study on why they favor a
             particular candidate. Arya Budi, a COMPOSE fellow and Ph.D.
@@ -190,7 +190,7 @@ const DetailedEvent = () => {
             Indonesia.” With him, we will explore how people emotionally connect
             with a presidential candidate and feel part of a group known as
             “presidential identification” or “Pres-ID.”
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -204,7 +204,7 @@ const DetailedEvent = () => {
       title: "Brownbag 34 with Okky Madasari",
       description: (
         <>
-          <p className="text-lg text-gray-600 text-justify">
+          <div className="text-lg text-gray-600 text-justify">
             Does the lack of critical thinking emphasis in Indonesia, influenced
             by politics and religion, hinder the nation’s path to self-reliance
             in knowledge and technology for development? How can Indonesia
@@ -215,7 +215,7 @@ const DetailedEvent = () => {
             <br /> Join the discussion on this topic at Brownbag 34, titled “The
             Destruction of Critical Thinking in Present-Day Indonesia?” with
             Okky Madasari, our COMPOSE fellow. Save the date!
-          </p>
+          </div>
         </>
       ),
       time: "14:00 - 15:30 PM JKT",
@@ -275,7 +275,10 @@ const DetailedEvent = () => {
           <div className="flex flex-col lg:flex-row items-center">
             {/* Left Content Section */}
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8 lg:pl-8">
-              <p className="text-lg text-gray-600 mt-4">{event.description}</p>
+              {/* Deskripsi Event Ditulis Langsung */}
+              <div className="text-lg text-gray-600 mt-4">
+                {event.description}
+              </div>
 
               <div className="mt-8 space-y-6">
                 {/* Date Section */}
@@ -321,7 +324,7 @@ const DetailedEvent = () => {
         <div className="flex justify-center mt-8">
           <a
             href={event.registerLink}
-            className="inline-block px-8 py-3 text-lg font-semibold text-white bg-[#00748D] rounded-xl hover:bg-[#005f6a]"
+            className="inline-block px-8 py-3 text-lg font-halyard text-white bg-[#00748D] rounded-xl hover:bg-[#005f6a]"
           >
             Register For Event
           </a>

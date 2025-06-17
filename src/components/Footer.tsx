@@ -14,10 +14,10 @@ const Footer = () => {
     <footer className="bg-[#01395E] text-white pt-[20px] pb-[29px] px-[50px] font-halyard">
       <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Left Section */}
-        <div className="mb-6 md:mb-0 max-w-[400px]">
-          <h3 className="text-[20px] font-medium">
-            Faculty of Social Sciences <br />
-            Universitas Islam Internasional Indonesia
+        <div className="mb-6 md:mb-0">
+          <h3 className="text-[20px] font-medium mt-6">
+            Faculty of Social Sciences <br /> Universitas Islam Internasional
+            Indonesia
           </h3>
           <p className="text-sm leading-relaxed py-[40px]">
             Faculty B Building, <br />
@@ -33,9 +33,9 @@ const Footer = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col items-start w-[348px]">
-          <h4 className="text-[20px] font-medium">Email Us</h4>
-          <div className="pt-[40px] pb-[40px] text-sm text-left space-y-1">
+        <div className="flex flex-col items-start w-[348px] h-[339px]">
+          <h4 className="text-[20px] font-medium mt-6">Email Us</h4>
+          <div className="pt-[40px] pb-[40px] text-sm text-left">
             <a
               href="mailto:social.sciences@uiii.ac.id"
               className="block hover:text-yellow-200"
