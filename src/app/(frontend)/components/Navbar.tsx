@@ -108,14 +108,14 @@ const NavBar = () => {
   return (
     <nav className="relative z-50 flex items-center justify-between h-[78px] px-[50px] py-4 bg-white font-halyard">
       {/* Logo */}
-      <div className="flex items-center space-x-3">
+      <Link href="/" className="flex items-center space-x-3">
         <Image
           src="/logo-uiii-berwarna.svg"
           alt="UIII Logo"
           width={260}
           height={50}
         />
-      </div>
+      </Link>
 
       {/* Navigation Links */}
       <ul className="flex space-x-8">

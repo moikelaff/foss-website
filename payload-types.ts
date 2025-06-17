@@ -6,12 +6,74 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
+/**
+ * Supported timezones in IANA format.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supportedTimezones".
+ */
+export type SupportedTimezones =
+  | 'Pacific/Midway'
+  | 'Pacific/Niue'
+  | 'Pacific/Honolulu'
+  | 'Pacific/Rarotonga'
+  | 'America/Anchorage'
+  | 'Pacific/Gambier'
+  | 'America/Los_Angeles'
+  | 'America/Tijuana'
+  | 'America/Denver'
+  | 'America/Phoenix'
+  | 'America/Chicago'
+  | 'America/Guatemala'
+  | 'America/New_York'
+  | 'America/Bogota'
+  | 'America/Caracas'
+  | 'America/Santiago'
+  | 'America/Buenos_Aires'
+  | 'America/Sao_Paulo'
+  | 'Atlantic/South_Georgia'
+  | 'Atlantic/Azores'
+  | 'Atlantic/Cape_Verde'
+  | 'Europe/London'
+  | 'Europe/Berlin'
+  | 'Africa/Lagos'
+  | 'Europe/Athens'
+  | 'Africa/Cairo'
+  | 'Europe/Moscow'
+  | 'Asia/Riyadh'
+  | 'Asia/Dubai'
+  | 'Asia/Baku'
+  | 'Asia/Karachi'
+  | 'Asia/Tashkent'
+  | 'Asia/Calcutta'
+  | 'Asia/Dhaka'
+  | 'Asia/Almaty'
+  | 'Asia/Jakarta'
+  | 'Asia/Bangkok'
+  | 'Asia/Shanghai'
+  | 'Asia/Singapore'
+  | 'Asia/Tokyo'
+  | 'Asia/Seoul'
+  | 'Australia/Brisbane'
+  | 'Australia/Sydney'
+  | 'Pacific/Guam'
+  | 'Pacific/Noumea'
+  | 'Pacific/Auckland'
+  | 'Pacific/Fiji';
+
 export interface Config {
   auth: {
     users: UserAuthOperations;
   };
+  blocks: {};
   collections: {
     users: User;
+    media: Media;
+    hero: Hero;
+    programs: Program;
+    headlines: Headline;
+    research: Research;
+    events: Event;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -19,12 +81,18 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    hero: HeroSelect<false> | HeroSelect<true>;
+    programs: ProgramsSelect<false> | ProgramsSelect<true>;
+    headlines: HeadlinesSelect<false> | HeadlinesSelect<true>;
+    research: ResearchSelect<false> | ResearchSelect<true>;
+    events: EventsSelect<false> | EventsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   globals: {};
   globalsSelect: {};
@@ -60,7 +128,9 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
+  name: string;
+  role: 'admin' | 'editor';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -74,18 +144,398 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  alt?: string | null;
+  caption?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    hero?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero".
+ */
+export interface Hero {
+  id: number;
+  title: string;
+  subtitle?: string | null;
+  /**
+   * Upload or select background image for the hero section
+   */
+  backgroundImage?: (number | null) | Media;
+  ctaButtons?:
+    | {
+        text: string;
+        href: string;
+        style?: ('primary' | 'secondary') | null;
+        id?: string | null;
+      }[]
+    | null;
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "programs".
+ */
+export interface Program {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Program featured image
+   */
+  image: number | Media;
+  /**
+   * Brief program description
+   */
+  description?: string | null;
+  /**
+   * Detailed program information
+   */
+  fullDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Link to the detailed program page (e.g., /academic-program/ma-political-science)
+   */
+  detailsPage?: string | null;
+  /**
+   * Display order (lower numbers appear first)
+   */
+  order?: number | null;
+  /**
+   * Program duration (e.g., "2 Years", "3-4 Years")
+   */
+  duration?: string | null;
+  /**
+   * Type of degree offered
+   */
+  degree?: ('ma' | 'mpp' | 'phd' | 'other') | null;
+  /**
+   * Make program visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "headlines".
+ */
+export interface Headline {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Brief description for homepage display
+   */
+  description: string;
+  /**
+   * Featured image for the headline
+   */
+  image: number | Media;
+  /**
+   * Full article content
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  publishedDate: string;
+  /**
+   * Article author name
+   */
+  author?: string | null;
+  /**
+   * Tags for categorization
+   */
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Show on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make headline visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "research".
+ */
+export interface Research {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Research author(s)
+   */
+  author: string;
+  /**
+   * Research abstract/summary
+   */
+  abstract: string;
+  /**
+   * Research thumbnail image
+   */
+  image?: (number | null) | Media;
+  /**
+   * Full research paper content
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  publishedDate: string;
+  /**
+   * Upload research paper PDF
+   */
+  pdfFile?: (number | null) | Media;
+  /**
+   * Research keywords for search and categorization
+   */
+  keywords?:
+    | {
+        keyword?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Research category
+   */
+  category?:
+    | (
+        | 'political-science'
+        | 'public-policy'
+        | 'international-relations'
+        | 'comparative-politics'
+        | 'political-theory'
+        | 'other'
+      )
+    | null;
+  /**
+   * Type of research publication
+   */
+  researchType?: ('journal' | 'working-paper' | 'conference' | 'book-chapter' | 'thesis' | 'other') | null;
+  /**
+   * Journal name (if applicable)
+   */
+  journal?: string | null;
+  /**
+   * Digital Object Identifier (DOI)
+   */
+  doi?: string | null;
+  /**
+   * Show on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make research visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Event description and details
+   */
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Event poster/featured image
+   */
+  image: number | Media;
+  /**
+   * Event date
+   */
+  eventDate: string;
+  /**
+   * Event time (e.g., "14:00 - 15:30 PM JKT")
+   */
+  eventTime?: string | null;
+  /**
+   * Event location
+   */
+  location?: string | null;
+  /**
+   * Type of event
+   */
+  eventType?: ('brownbag' | 'workshop' | 'seminar' | 'conference' | 'lecture' | 'other') | null;
+  /**
+   * Event speaker/presenter
+   */
+  speaker?: string | null;
+  /**
+   * Speaker biography
+   */
+  speakerBio?: string | null;
+  /**
+   * Mark as upcoming event
+   */
+  isUpcoming?: boolean | null;
+  /**
+   * Feature this event on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make event visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
-  document?: {
-    relationTo: 'users';
-    value: string | User;
-  } | null;
+  id: number;
+  document?:
+    | ({
+        relationTo: 'users';
+        value: number | User;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'hero';
+        value: number | Hero;
+      } | null)
+    | ({
+        relationTo: 'programs';
+        value: number | Program;
+      } | null)
+    | ({
+        relationTo: 'headlines';
+        value: number | Headline;
+      } | null)
+    | ({
+        relationTo: 'research';
+        value: number | Research;
+      } | null)
+    | ({
+        relationTo: 'events';
+        value: number | Event;
+      } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -95,10 +545,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -118,7 +568,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -129,6 +579,8 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -138,6 +590,171 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  caption?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        hero?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero_select".
+ */
+export interface HeroSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  backgroundImage?: T;
+  ctaButtons?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        style?: T;
+        id?: T;
+      };
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "programs_select".
+ */
+export interface ProgramsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  image?: T;
+  description?: T;
+  fullDescription?: T;
+  detailsPage?: T;
+  order?: T;
+  duration?: T;
+  degree?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "headlines_select".
+ */
+export interface HeadlinesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  content?: T;
+  publishedDate?: T;
+  author?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "research_select".
+ */
+export interface ResearchSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  author?: T;
+  abstract?: T;
+  image?: T;
+  content?: T;
+  publishedDate?: T;
+  pdfFile?: T;
+  keywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
+  category?: T;
+  researchType?: T;
+  journal?: T;
+  doi?: T;
+  externalUrl?: T;
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events_select".
+ */
+export interface EventsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  eventDate?: T;
+  eventTime?: T;
+  location?: T;
+  registerLink?: T;
+  eventType?: T;
+  speaker?: T;
+  speakerBio?: T;
+  isUpcoming?: T;
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -1,1 +1,0 @@
-contains shared typescript type definitions, interfaces, etc. such as `User`, `Post`, api response types, etc.

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import HeroSection from '@/app/(frontend)/components/LandingPage/Hero';
-import ProgramsSection from '@/app/(frontend)/components/LandingPage/Programs';
-import ResearchSection from '@/app/(frontend)/components/LandingPage/Research';
-import HeadlinesSection from '@/app/(frontend)/components/LandingPage/Headlines';
+import HeroSection from '@/components/LandingPage/Hero';
+import ProgramsSection from '@/components/LandingPage/Programs';
+import ResearchSection from '@/components/LandingPage/Research';
+import HeadlinesSection from '@/components/LandingPage/Headlines';
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Faculty of Social Sciences - UIII',
@@ -13,10 +15,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <div className="flex-grow">
+        <NavBar />
         <HeroSection />
         <ProgramsSection />
         <ResearchSection />
         <HeadlinesSection />
+        <Footer />
       </div>
     </main>
   );

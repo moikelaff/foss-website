@@ -13,14 +13,18 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": "./src/app",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@payload-config": ["./src/app/payload.config.ts"]
+      "@/*": ["./*"],
+      "@/components/*": ["(frontend)/components/*"],
+      "@payload-config": ["../../payload.config.ts"],
+      "@/lib/*": ["./*"],
+      "@/payload": ["../../payload.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
