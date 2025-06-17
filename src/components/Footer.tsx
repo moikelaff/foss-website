@@ -55,9 +55,9 @@ const Footer = () => {
             <a href="mailto:social.sciences@uiii.ac.id">
               <Mail className="w-[32px] h-[32px] hover:text-blue-300" />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <Music className="w-[32px] h-[32px] hover:text-blue-300" />
-            </a>
+            </a> */}
             <a href="tel:+62123456789">
               <Phone className="w-[32px] h-[32px] hover:text-blue-300" />
             </a>
