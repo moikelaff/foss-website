@@ -13,7 +13,7 @@ export default function AcademicProgramPage() {
         <nav>
           <NavBar />
         </nav>
-        <main>
+        <main className="font-halyard">
           <AcademicProgramHero/>
           <AcademicProgramIntro/>
           <VisionMissions/> 
