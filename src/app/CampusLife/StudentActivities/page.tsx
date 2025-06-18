@@ -78,14 +78,14 @@ export default function Events() {
 
       {/* Hero Section */}
       <section className="py-4 bg-white-50">
-        <div className="text-center text-black px-4 py-8">
-          <h1 className="text-6xl font-bold">Student Activities</h1>
+        <div className="text-center font-['Halyard_Display'] text-sky-950 px-4 py-8">
+          <h1 className="text-7xl font-medium">Student Activities</h1>
         </div>
         <div className="pl-32">
-          <h2 className="text-4xl font-bold text-gray-800">
+          <h2 className="text-4xl font-medium font-['Halyard_Display'] text-sky-950">
             Recent Activities
           </h2>
-          <p className="text-lg text-gray-600 mt-4">
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             See recent activities from students of UIII
           </p>
         </div>
@@ -106,19 +106,19 @@ export default function Events() {
                   width: "100%",
                   maxWidth: "600px",
                   margin: "0 auto",
-                  display: "flex", 
+                  display: "flex",
                   flexDirection: "column",
-                  height: "450px", 
+                  height: "450px",
                 }}
               >
                 <div className="flex w-full">
                   {/* Left Date Section */}
                   <div className="w-1/3 p-6 flex justify-center items-start">
                     <div className="flex flex-col items-start justify-start pl-2">
-                      <p className="text-4xl font-bold text-[#00748D]">
+                      <p className="text-4xl font-bold font-['Halyard_Display'] text-[#00748D]">
                         {event.date.split(" ")[0]}
                       </p>
-                      <p className="text-3xl font-bold text-gray-600 mt-1">
+                      <p className="text-3xl font-bold font-['Halyard_Display'] text-sky-950 mt-1">
                         {event.date.split(" ")[1]}
                       </p>
                     </div>
@@ -138,7 +138,7 @@ export default function Events() {
 
                 {/* Text Section Below Image */}
                 <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-gray-800 mt-2">
+                  <h3 className="text-xl font-medium font-['Halyard_Display'] text-sky-950 mt-2">
                     {event.title}
                   </h3>
                 </div>

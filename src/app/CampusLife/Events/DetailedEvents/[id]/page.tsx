@@ -262,12 +262,16 @@ const DetailedEvent = () => {
               <p className="text-[#00748D] text-5xl font-bold">
                 {event.date.split(" ")[0]}
               </p>
-              <p className="text-5xl font-bold">{event.date.split(" ")[1]}</p>
+              <p className="text-5xl font-bold font-['Halyard_Display'] text-sky-950">
+                {event.date.split(" ")[1]}
+              </p>
             </div>
 
             {/* Title Section */}
             <div className="ml-8">
-              <h2 className="text-5xl font-bold text-black">{event.title}</h2>
+              <h2 className="text-5xl font-medium font-['Halyard_Display'] text-sky-950">
+                {event.title}
+              </h2>
             </div>
           </div>
 
@@ -276,31 +280,41 @@ const DetailedEvent = () => {
             {/* Left Content Section */}
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8 lg:pl-8">
               {/* Deskripsi Event Ditulis Langsung */}
-              <div className="text-lg text-gray-600 mt-4">
+              <div className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
                 {event.description}
               </div>
 
               <div className="mt-8 space-y-6">
                 {/* Date Section */}
                 <div>
-                  <p className="text-xl font-semibold text-gray-800">Date</p>
-                  <p className="text-lg text-gray-600">{event.date}</p>
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
+                    Date
+                  </p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.date}
+                  </p>
                   <hr className="border-gray-300 mt-2" />
                 </div>
 
                 {/* Time Section */}
                 <div>
-                  <p className="text-xl font-semibold text-gray-800">Time</p>
-                  <p className="text-lg text-gray-600">{event.time}</p>
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
+                    Time
+                  </p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.time}
+                  </p>
                   <hr className="border-gray-300 mt-2" />
                 </div>
 
                 {/* Location Section */}
                 <div>
-                  <p className="text-xl font-semibold text-gray-800">
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
                     Location
                   </p>
-                  <p className="text-lg text-gray-600">{event.location}</p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.location}
+                  </p>
                   <hr className="border-gray-300 mt-2" />
                 </div>
               </div>
@@ -324,7 +338,7 @@ const DetailedEvent = () => {
         <div className="flex justify-center mt-8">
           <a
             href={event.registerLink}
-            className="inline-block px-8 py-3 text-lg font-halyard text-white bg-[#00748D] rounded-xl hover:bg-[#005f6a]"
+            className="px-8 py-3 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4"
           >
             Register For Event
           </a>
