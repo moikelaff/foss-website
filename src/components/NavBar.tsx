@@ -88,9 +88,16 @@ const NavBar = () => {
           type: "item",
           href: "/national-survey-varieties-of-muslim-religious-practices-and-views-in-indonesia",
         },
-        { label: "Journal", type: "item" },
-        { label: "Students", type: "item", indent: true },
-        { label: "Lecturers", type: "item", indent: true },
+        {
+          label: "Students Journal",
+          type: "item",
+          href: "/research-and-publication/students-journal",
+        },
+        {
+          label: "Lecturers Journal",
+          type: "item",
+          href: "/research-and-publication/lecturers-journal",
+        },
       ],
     },
     {
