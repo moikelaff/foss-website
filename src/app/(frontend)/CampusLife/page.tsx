@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { Link } from "lucide-react";
 
 export default function CampusLife() {
   return (
@@ -22,9 +23,9 @@ export default function CampusLife() {
             className="absolute top-0 left-0"
           />
         </div>
-        <div className="text-center text-black px-4 py-8">
-          <h1 className="text-5xl font-bold">Campus Life</h1>
-          <p className="text-lg mt-4">
+        <div className="mt-4 mb-4 text-center font-['Halyard_Display'] text-sky-950">
+          <h1 className="text-7xl font-medium ">Campus Life</h1>
+          <p className="text-lg mt-4 font-['Halyard_Display']">
             Explore your potential, connect with like-minded individuals, and
             make your mark at UIII
           </p>
@@ -50,18 +51,19 @@ export default function CampusLife() {
         <div className="w-1/2 pl-16">
           {" "}
           {/* Added padding-left (pl-8) */}
-          <h2 className="text-5xl font-bold text-gray-800">Events</h2>
-          <p className="text-lg text-gray-700 mt-4">
+          <h2 className="text-6xl font-['Halyard_Display'] text-sky-950 font-medium">
+            Events
+          </h2>
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             Discover endless opportunities to expand your knowledge and explore
             new passions through expert-led events. Explore the upcoming events
             and take advantage of these valuable opportunities to enrich your
             academic and personal growth.
           </p>
-          <a
-            href="CampusLife/Events"
-            className="mt-6 text-blue-800 font-semibold flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/Events">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -98,20 +100,19 @@ export default function CampusLife() {
         <div className="w-1/2 pl-16">
           {" "}
           {/* Added padding-left (pl-8) */}
-          <h2 className="text-5xl font-bold text-gray-800">
+          <h2 className="text-7xl font-['Halyard_Display'] text-sky-950 font-medium">
             Student Activities
           </h2>
-          <p className="text-lg text-gray-800 mt-4">
+          <p className="text-lg text-gray-800 mt-4 font-['Halyard_Display'] text-sky-950">
             UIII students are actively shaping their academic journey by
             pursuing their passions and achieving remarkable milestones. Dive
             into these inspiring stories of our students’ accomplishments and
             see how they’re making an impact!
           </p>
-          <a
-            href="CampusLife/StudentActivities"
-            className="mt-6 text-blue-700 font-semibold flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/StudentActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -147,20 +148,19 @@ export default function CampusLife() {
         <div className="w-1/2 pl-16">
           {" "}
           {/* Added padding-left (pl-8) */}
-          <h2 className="text-5xl font-bold text-gray-800">
+          <h2 className="text-6xl font-['Halyard_Display'] text-sky-950 font-medium">
             Lecturer Activities
           </h2>
-          <p className="text-lg text-gray-800 mt-4">
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             UIII’s lecturers are experts in the social sciences, with a wealth
             of experience, remarkable achievements, and inspiring stories to
             share. Explore their journeys and be inspired by their dedication
             and expertise!
           </p>
-          <a
-            href="/CampusLife/LecturerActivities"
-            className="mt-6 text-blue-700 font-semibold flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/LecturerActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}
@@ -196,20 +196,19 @@ export default function CampusLife() {
         <div className="w-1/2 pl-16">
           {" "}
           {/* Added padding-left (pl-8) */}
-          <h2 className="text-5xl font-bold text-gray-800">
+          <h2 className="text-6xl font-['Halyard_Display'] text-sky-950 font-medium">
             Alumni Activities
           </h2>
-          <p className="text-lg text-gray-800 mt-4">
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             UIII alumni continue to make an impact in various fields, staying
             connected with the university through meaningful activities and
             collaborations. Explore the inspiring journeys of our alumni and
             discover how they contribute to shaping the future!
           </p>
-          <a
-            href="CampusLife/AlumniActivities"
-            className="mt-6 text-blue-700 font-semibold flex items-center"
-          >
-            LEARN MORE <span className="ml-2">&#9679;</span>
+          <a href="/CampusLife/AlumniActivities">
+            <button className="px-4 py-2 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4">
+              Learn More
+            </button>
           </a>
         </div>
         {/* Right Image Section */}

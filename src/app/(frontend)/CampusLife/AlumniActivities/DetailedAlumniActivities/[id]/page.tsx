@@ -10,19 +10,19 @@ const AlumniActivityDetail = () => {
   const events = [
     {
       id: "1",
-      date: "Jan 10",
-      title: "3 Minutes Thesis by PhD students of FoSS",
+      date: "Jun 05",
+      title: "Collecting, Classifying, and Analyzing Textual Data Using R",
       description:
         "PhD students of the Faculty of Social Sciences (FoSS) participated in a 3-minute thesis competition, presenting their research in a concise and engaging format.",
-      image: "/campus_life/AlumniAct1.jpg",
+      image: "/campus_life/AlumniAct20.png",
     },
     {
       id: "2",
-      date: "Jun 06",
-      title: "Climate Talk 4 with Aichiro",
+      date: "Jul 01",
+      title: "Comparative Historical Analysis in the Social Sciences",
       description:
         "Aichiro delivered a powerful talk on the role of climate change in contemporary global politics, offering insights into how international collaborations can address this pressing issue.",
-      image: "/campus_life/AlumniAct2.jpg",
+      image: "/campus_life/AlumniAct21.jpg",
     },
     {
       id: "3",
@@ -95,29 +95,32 @@ const AlumniActivityDetail = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-start">
             <div className="flex flex-col items-start">
-              <p className="text-4xl font-bold text-[#00748D]">
+              <p className="text-4xl font-bold font-['Halyard_Display'] text-[#00748D]">
                 {event.date.split(" ")[0]}
               </p>
-              <p className="text-3xl font-bold text-gray-600">
+              <p className="text-3xl font-bold font-['Halyard_Display'] text-sky-950">
                 {event.date.split(" ")[1]}
               </p>
             </div>
 
-            <div className="relative w-[200px] h-[250px] mt-6 ml-6">
+            <div className="w-1/2 ml-8">
               <Image
                 src={event.image}
                 alt={`Event ${event.id}`}
-                layout="fill"
+                width={500}
+                height={500}
                 objectFit="cover"
                 objectPosition="center"
               />
             </div>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-800 mt-8">
+          <h2 className="text-4xl font-medium font-['Halyard_Display'] text-sky-950 mt-8">
             {event.title}
           </h2>
-          <p className="text-lg text-gray-600 mt-4">{event.description}</p>
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
+            {event.description}
+          </p>
         </div>
       </section>
 

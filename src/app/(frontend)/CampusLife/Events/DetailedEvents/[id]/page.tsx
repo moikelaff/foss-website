@@ -1,293 +1,349 @@
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import NavBar from "@/components/Navbar";
+"use client";
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { getEventBySlug, getMediaUrl } from '@/payload';
 
-interface EventDetailPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
+const DetailedEvent = () => {
+  const { id } = useParams();
 
-const EventDetailPage = async ({ params }: EventDetailPageProps) => {
-  const { slug } = await params;
-  
-  // Try to get event from CMS first
-  const cmsEvent = await getEventBySlug(slug);
-
-  // Fallback data for development (your existing detailed events data)
-  const fallbackEvents: { [key: string]: any } = {
-    "brownbag-40-amin-mudzakkir": {
+  const events = [
+    {
       id: "1",
       date: "Jan 05",
       title: "Series Brownbag 40 with Amin Mudzakkir",
-      description: `
-        <p>The first Brownbag Series in 2024!</p>
-        <p>Join us for our 40th Brownbag Series. In this engaging discussion, we'll delve into how Islamic feminism's intersection with the political economy in Indonesia is reshaping the conventional split between the politics of recognition and redistribution.</p>
-        <p>This session, titled 'The Paradox of Feminism in Indonesia: Political Economy, Muslim Piety, and Authority,' will feature Amin Mudzakkir, our COMPOSE fellow and a researcher at PRW BRIN, Indonesia.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            The first Brownbag Series in 2024!
+            <br />
+            Join us for our 40th Brownbag Series. In this engaging discussion,
+            we’ll delve into how Islamic feminism’s intersection with the
+            political economy in Indonesia is reshaping the conventional split
+            between the politics of recognition and redistribution.
+            <br />
+            This session, titled ‘The Paradox of Feminism in Indonesia:
+            Political Economy, Muslim Piety, and Authority,’ will feature Amin
+            Mudzakkir, our COMPOSE fellow and a researcher at PRW BRIN,
+            Indonesia.
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
       location: "Teleconference Room, Faculty A Building, UIII",
       image: "/campus_life/Brownbag-40.png",
       registerLink: "#",
-      speaker: "Amin Mudzakkir",
-      speakerBio: "COMPOSE fellow and researcher at PRW BRIN, Indonesia"
     },
-    "riset-jabar-dissemination": {
+    {
       id: "2",
       date: "Dec 28",
       title: "Diseminasi Hasil Awal Penelitian Riset Jabar",
-      description: `
-        <p>Yuk, gabung dalam diskusi tentang tantangan pembangunan ekonomi dan sosial di Jawa Barat!</p>
-        <p>Kegiatan ini akan membahas hasil riset dan mencari solusi untuk Jawa Barat yang lebih maju.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            Yuk, gabung dalam diskusi tentang tantangan pembangunan ekonomi dan
+            sosial di Jawa Barat!
+            <br /> Kegiatan ini akan membahas hasil riset dan mencari solusi
+            untuk Jawa Barat yang lebih maju.
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
       location: "Teleconference Room, Faculty A Building, UIII",
       image: "/campus_life/event2.png",
       registerLink: "#",
     },
-    "brownbag-39-muhammad-syukri": {
+    {
       id: "3",
-      date: "Dec 20",
-      title: "Series Brownbag 39 with Muhammad Syukri",
-      description: `
-        <p>Join us for our 39th Brownbag Series featuring Muhammad Syukri.</p>
-        <p>This session will explore village governance and environmental sustainability in Indonesia.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
-      location: "Teleconference Room, Faculty A Building, UIII",
+      date: "Jan 04",
+      title: "Brownbag 39 with Muhammad Syukri",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            Let’s explore how policy changes impact village autonomy and green
+            initiatives!
+            <br /> Discover how the Indonesian government, led by Jokowi,
+            influences villages and the environment. Are they focused on solving
+            local problems like environmental degradation, or is their main
+            interest in building industrial infrastructure development for
+            economic growth?
+            <br />
+            Join us for our next Brownbag session titled ‘Village Governance and
+            Environmental Sustainability in Indonesia’ featuring Muhammad
+            Syukri, our COMPOSE fellow and Senior Researcher at The SMERU
+            Research Institute, Indonesia.
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
+      location: "Classroom 10, Faculty A Building, UIII",
       image: "/campus_life/event3.png",
       registerLink: "#",
-      speaker: "Muhammad Syukri"
     },
-    "brownbag-38-fathun-karib": {
+    {
       id: "4",
       date: "Dec 15",
-      title: "Series Brownbag 38 with Fathun Karib",
-      description: `
-        <p>Join us for our 38th Brownbag Series featuring Fathun Karib.</p>
-        <p>This session will discuss contemporary political developments and their implications.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
+      title: "Brownbag 38 with Fathun Karib",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            How can the concept of “Just Transition” be redefined to ensure
+            justice for marginalized groups in Indonesia and other Global South
+            countries, addressing the limitations and potential biases embedded
+            in the mainstream approach primarily designed for Northern nations?
+            <br />
+            Join us for a discussion with Fathun Karib, our COMPOSE fellow and
+            also a Sociology lecturer at the Faculty of Social and Political
+            Sciences, Universitas Islam Negeri (UIN) Syarif Hidayatullah
+            Jakarta, in Brownbag Series 38 titled “Justice for Whom?: Just
+            Transition and the Global South.”
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
       location: "Teleconference Room, Faculty A Building, UIII",
       image: "/campus_life/event4.png",
       registerLink: "#",
-      speaker: "Fathun Karib"
     },
-    "climate-talk-michiel-schaeffer": {
+    {
       id: "5",
       date: "Dec 14",
       title: "The First Climate Talk with Michiel Schaeffer",
-      description: `
-        <p>Join us for our inaugural Climate Talk series featuring Michiel Schaeffer.</p>
-        <p>This session will explore climate change challenges and policy solutions at the global level.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            The Conference of the Parties (COP) to the UN Framework Convention
+            on Climate Change (UNFCCC) is an international climate summit held
+            annually. At COPs, world leaders gather to collaborate on solutions
+            to tackle climate change. This year, known as COP28, is takes place
+            in Dubai, United Arab Emirates.
+            <br /> Prof. Schaeffer, our adjunct Professor of Master in Public
+            Policy focusing on Climate Change at FOSS UIII and Lead Science
+            Advisor at Climate Analytics in Germany, just returned from the
+            conference. In Dubai, he presented the Global Mitigation Potential
+            Atlas, followed by a panel discussion.
+          </div>
+        </>
+      ),
+      time: "09:30 - 11:00 AM JKT",
       location: "Teleconference Room, Faculty A Building, UIII",
       image: "/campus_life/event5.svg",
       registerLink: "#",
-      speaker: "Michiel Schaeffer"
     },
-    "brownbag-37-nathanael-sumaktoyo": {
+    {
       id: "6",
       date: "Dec 13",
-      title: "Series Brownbag 37 with Nathanael G. Sumaktoyo",
-      description: `
-        <p>Join us for our 37th Brownbag Series featuring Nathanael G. Sumaktoyo.</p>
-        <p>This session will examine political behavior and electoral dynamics in Southeast Asia.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
-      location: "Teleconference Room, Faculty A Building, UIII",
+      title: "Brownbag 37 with Nathanael G. Sumaktoyo",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            How do houses of worship, especially mosques in Indonesia, shape not
+            only the beliefs of their congregations but also influence the
+            political ideologies of their surrounding communities?
+            <br /> Join us for a discussion with Nathanael G. Sumaktoyo, an
+            assistant professor at the University of Singapore, in Brownbag
+            Series 37 titled “Political Theory, House of Worship, and Indonesian
+            Mosque.”
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
+      location: "Smart Classroom 10, Faculty A Building, UIII",
       image: "/campus_life/event6.png",
       registerLink: "#",
-      speaker: "Nathanael G. Sumaktoyo"
     },
-    "brownbag-36-aizat-khairi": {
+    {
       id: "7",
       date: "Dec 08",
-      title: "Series Brownbag 36 with Aizat bin Khairi",
-      description: `
-        <p>Join us for our 36th Brownbag Series featuring Aizat bin Khairi.</p>
-        <p>This session will discuss Islamic political thought and governance in contemporary Malaysia.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
-      location: "Teleconference Room, Faculty A Building, UIII",
+      title: "Brownbag 36 with Aizat bin Khairi",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            How do community-based organizations (CBOs) initiated by Muslim
+            Rohingya refugees in Malaysia navigate legal barriers and cultural
+            adaptation challenges? What role does self-resilience play in their
+            potential transformation and contribution to the community? Let’s
+            discuss this with Aizat bin Khairi from Universiti Kuala Lumpur in
+            Brownbag Series 36 titled “The Path towards Inclusivity: CBOs and
+            Rohingya in Malaysia.”
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
+      location: "Smart Classroom 10, Faculty A Building, UIII",
       image: "/campus_life/event7.png",
       registerLink: "#",
-      speaker: "Aizat bin Khairi"
     },
-    "brownbag-35-arya-budi": {
+    {
       id: "8",
       date: "Dec 06",
-      title: "Series Brownbag 35 with Arya Budi",
-      description: `
-        <p>Join us for our 35th Brownbag Series featuring Arya Budi.</p>
-        <p>This session will explore urban governance and public policy innovation in Indonesian cities.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
-      location: "Teleconference Room, Faculty A Building, UIII",
+      title: "Brownbag 35 with Arya Budi",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            People supporting different presidential candidates have strong
+            opinions. Still, there hasn’t been enough study on why they favor a
+            particular candidate. Arya Budi, a COMPOSE fellow and Ph.D.
+            candidate at the Department of Political Science, University of
+            Illinois Urbana-Champaign, will be the speaker in this Brownbag
+            Series titled “Political Behavior and Presidential Identification in
+            Indonesia.” With him, we will explore how people emotionally connect
+            with a presidential candidate and feel part of a group known as
+            “presidential identification” or “Pres-ID.”
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
+      location: "Smart Classroom 10, Faculty A Building, UIII",
       image: "/campus_life/event8.png",
       registerLink: "#",
-      speaker: "Arya Budi"
     },
-    "brownbag-34-okky-madasari": {
+    {
       id: "9",
       date: "Dec 01",
-      title: "Series Brownbag 34 with Okky Madasari",
-      description: `
-        <p>Join us for our 34th Brownbag Series featuring Okky Madasari.</p>
-        <p>This session will discuss literature, politics, and social change in contemporary Indonesia.</p>
-      `,
-      eventTime: "14:00 - 15:30 PM JKT",
+      title: "Brownbag 34 with Okky Madasari",
+      description: (
+        <>
+          <div className="text-lg text-gray-600 text-justify">
+            Does the lack of critical thinking emphasis in Indonesia, influenced
+            by politics and religion, hinder the nation’s path to self-reliance
+            in knowledge and technology for development? How can Indonesia
+            overcome this challenge and enhance its capacity to generate
+            authentic knowledge, progress in science and technology, and
+            establish policies and development strategies based on science and
+            research?
+            <br /> Join the discussion on this topic at Brownbag 34, titled “The
+            Destruction of Critical Thinking in Present-Day Indonesia?” with
+            Okky Madasari, our COMPOSE fellow. Save the date!
+          </div>
+        </>
+      ),
+      time: "14:00 - 15:30 PM JKT",
       location: "Teleconference Room, Faculty A Building, UIII",
       image: "/campus_life/event9.png",
       registerLink: "#",
-      speaker: "Okky Madasari"
-    }
-  };
+    },
+  ];
 
-  // Use CMS event if available, otherwise fallback
-  const eventData = cmsEvent || fallbackEvents[slug];
+  const event = events.find((event) => event.id === id);
 
-  if (!eventData) {
-    notFound();
+  if (!event) {
+    return (
+      <div className="w-full">
+        <header>
+          <NavBar />
+        </header>
+        <section className="py-5 bg-white-50 mb-16">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-gray-800">
+              Event not found
+            </h2>
+          </div>
+        </section>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    );
   }
 
-  // Format date for display
-  const formattedDate = eventData.eventDate 
-    ? new Date(eventData.eventDate).toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: '2-digit' 
-      })
-    : eventData.date;
-
-  // Get image URL
-  const imageUrl = eventData.image 
-    ? (typeof eventData.image === 'string' ? eventData.image : getMediaUrl(eventData.image))
-    : eventData.image;
-
-  // Convert CMS rich text to HTML string if needed
-  const getDescriptionHTML = (description: any) => {
-    if (typeof description === 'string') {
-      return description;
-    }
-    // Handle CMS rich text format - you may need to adjust this based on your rich text structure
-    if (description?.root?.children) {
-      // This is a simplified conversion - you might want to use a proper rich text renderer
-      return description.root.children
-        .map((child: any) => {
-          if (child.type === 'paragraph') {
-            const text = child.children?.map((c: any) => c.text || '').join('') || '';
-            return `<p>${text}</p>`;
-          }
-          return '';
-        })
-        .join('');
-    }
-    return '';
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="w-full relative">
       <header>
         <NavBar />
       </header>
-      
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Back Button */}
-        <div className="mb-6">
-          <Link
-            href="/CampusLife/Events"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
+
+      {/* Date and Title Section */}
+      <section className="py-5 bg-white-50 mb-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center mb-8">
+            {/* Left Date Section */}
+            <div className="flex flex-col items-start ml-6">
+              <p className="text-[#00748D] text-5xl font-bold">
+                {event.date.split(" ")[0]}
+              </p>
+              <p className="text-5xl font-bold font-['Halyard_Display'] text-sky-950">
+                {event.date.split(" ")[1]}
+              </p>
+            </div>
+
+            {/* Title Section */}
+            <div className="ml-8">
+              <h2 className="text-5xl font-medium font-['Halyard_Display'] text-sky-950">
+                {event.title}
+              </h2>
+            </div>
+          </div>
+
+          {/* Event Description and Details Section */}
+          <div className="flex flex-col lg:flex-row items-center">
+            {/* Left Content Section */}
+            <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8 lg:pl-8">
+              {/* Deskripsi Event Ditulis Langsung */}
+              <div className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
+                {event.description}
+              </div>
+
+              <div className="mt-8 space-y-6">
+                {/* Date Section */}
+                <div>
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
+                    Date
+                  </p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.date}
+                  </p>
+                  <hr className="border-gray-300 mt-2" />
+                </div>
+
+                {/* Time Section */}
+                <div>
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
+                    Time
+                  </p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.time}
+                  </p>
+                  <hr className="border-gray-300 mt-2" />
+                </div>
+
+                {/* Location Section */}
+                <div>
+                  <p className="text-xl font-medium font-['Halyard_Display'] text-sky-950">
+                    Location
+                  </p>
+                  <p className="text-lg font-['Halyard_Display'] text-gray-600">
+                    {event.location}
+                  </p>
+                  <hr className="border-gray-300 mt-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image Section */}
+            <div className="w-full lg:w-1/3 relative mb-8 lg:mb-0 lg:pl-8">
+              <Image
+                src={event.image}
+                alt={`Event ${event.id}`}
+                width={500}
+                height={500}
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Register Button Positioned Below the Image */}
+        <div className="flex justify-center mt-8">
+          <a
+            href={event.registerLink}
+            className="px-8 py-3 bg-brandNavy text-white font-light font-halyard rounded-lg hover:bg-[#005c74] transition mt-4"
           >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Events
-          </Link>
+            Register For Event
+          </a>
         </div>
-
-        {/* Event Header */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-          <div className="relative h-96">
-            <Image
-              src={imageUrl}
-              alt={eventData.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          <div className="p-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <div>
-                <div className="text-3xl font-bold text-gray-800 mb-2">{formattedDate}</div>
-                <h1 className="text-4xl font-bold text-gray-800 mb-4">{eventData.title}</h1>
-              </div>
-            </div>
-
-            {/* Event Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {eventData.eventTime && (
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 text-gray-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-gray-700">{eventData.eventTime}</span>
-                </div>
-              )}
-              
-              {eventData.location && (
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 text-gray-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-gray-700">{eventData.location}</span>
-                </div>
-              )}
-              
-              {eventData.speaker && (
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 text-gray-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  <span className="text-gray-700">{eventData.speaker}</span>
-                </div>
-              )}
-            </div>
-
-            {/* Event Description */}
-            <div className="prose prose-lg max-w-none mb-8">
-              <div dangerouslySetInnerHTML={{ 
-                __html: getDescriptionHTML(eventData.description) 
-              }} />
-            </div>
-
-            {/* Speaker Bio */}
-            {eventData.speakerBio && (
-              <div className="bg-gray-50 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">About the Speaker</h3>
-                <p className="text-gray-700">{eventData.speakerBio}</p>
-              </div>
-            )}
-
-            {/* Register Button */}
-            {eventData.registerLink && eventData.registerLink !== "#" && (
-              <div className="text-center">
-                <Link
-                  href={eventData.registerLink}
-                  className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
-                >
-                  Register for Event
-                </Link>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      </section>
 
       <footer>
         <Footer />
@@ -296,4 +352,4 @@ const EventDetailPage = async ({ params }: EventDetailPageProps) => {
   );
 };
 
-export default EventDetailPage;
+export default DetailedEvent;

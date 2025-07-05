@@ -7,43 +7,57 @@ export default function AlumniActivities() {
   const events = [
     {
       id: 1,
-      date: "Jan 10",
-      title: "3 Minutes Thesis by PhD students of FoSS",
-      image: "/campus_life/AlumniAct1.jpg",
+      date: "Jun 05",
+      title: "Collecting, Classifying, and Analyzing Textual Data Using R",
+      image: "/campus_life/AlumniAct20.png",
     },
     {
       id: 2,
-      date: "Jun 06",
-      title: "Climate Talk 4 with Aichiro",
-      image: "/campus_life/AlumniAct2.jpg",
+      date: "Jul 01",
+      title: "Comparative Historical Analysis in the Social Sciences",
+      image: "/campus_life/AlumniAct21.jpg",
     },
     {
       id: 3,
-      date: "Sep 12",
-      title:
-        "Philips J. Vermonte, Ph.D., served as a speaker in the Roundtable event hosted by the National Security College (NSC) at Australian National University (ANU) on September 12, 2024.",
-      image: "/campus_life/AlumniAct3.jpg",
+      date: "Jul 03",
+      title: "Digital Ethnographic Methods",
+      image: "/campus_life/AlumniAct22.jpg",
     },
     {
       id: 4,
-      date: "Oct 20",
-      title:
-        "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, served as a speaker at The Jakarta Post YouTube channel",
-      image: "/campus_life/LecturerAct4.jpg",
+      date: "Jul 05",
+      title: "Case Study Methods",
+      image: "/campus_life/AlumniAct23.jpg",
     },
     {
       id: 5,
-      date: "Oct 20",
-      title:
-        "Philips J. Vermonte, Ph.D., Our Dean of the Faculty of Social Sciences, published a journal",
-      image: "/campus_life/LecturerAct5.jpg",
+      date: "Jul 08",
+      title: "Qualitative Social Network in Social Sciences",
+      image: "/campus_life/AlumniAct24.jpg",
     },
     {
       id: 6,
-      date: "Oct 20",
-      title:
-        "Prof. Farish A. Noor, our Political Science Lecturer, served as a speaker in the YouTube video by NU Online",
-      image: "/campus_life/LecturerAct6.jpg",
+      date: "Jul 10",
+      title: "Categorical Data Analysis",
+      image: "/campus_life/AlumniAct25.jpg",
+    },
+    {
+      id: 7,
+      date: "Jul 15",
+      title: "Survey Experiments in Social Sciences",
+      image: "/campus_life/AlumniAct19.jpg",
+    },
+    {
+      id: 8,
+      date: "Jul 17",
+      title: "Introduction to Climate Modelling",
+      image: "/campus_life/AlumniAct18.jpg",
+    },
+    {
+      id: 9,
+      date: "Jul 18",
+      title: "Introduction to Mixed Methods Research",
+      image: "/campus_life/AlumniAct17.jpg",
     },
   ];
 
@@ -55,14 +69,14 @@ export default function AlumniActivities() {
 
       {/* Hero Section */}
       <section className="py-4 bg-white-50">
-        <div className="text-center text-black px-4 py-8">
-          <h1 className="text-6xl font-bold">Alumni Activities</h1>
+        <div className="mt-4 mb-4 text-center font-['Halyard_Display'] text-sky-950">
+          <h1 className="text-7xl font-medium">Alumni Activities</h1>
         </div>
         <div className="pl-32">
-          <h2 className="text-4xl font-bold text-gray-800">
+          <h2 className="text-4xl font-medium font-['Halyard_Display'] text-sky-950">
             Recent Activities
           </h2>
-          <p className="text-lg text-gray-600 mt-4">
+          <p className="text-lg font-['Halyard_Display'] text-sky-950 mt-4">
             See recent activities from alumni of UIII
           </p>
         </div>
@@ -92,10 +106,10 @@ export default function AlumniActivities() {
                   {/* Left Date Section */}
                   <div className="w-1/3 p-6 flex justify-center items-start">
                     <div className="flex flex-col items-start justify-start pl-2">
-                      <p className="text-4xl font-bold text-[#00748D]">
+                      <p className="text-4xl font-bold font-['Halyard_Display'] text-[#00748D]">
                         {event.date.split(" ")[0]}
                       </p>
-                      <p className="text-3xl font-bold text-gray-600 mt-1">
+                      <p className="text-3xl font-bold font-['Halyard_Display'] text-sky-950">
                         {event.date.split(" ")[1]}
                       </p>
                     </div>
@@ -115,7 +129,7 @@ export default function AlumniActivities() {
 
                 {/* Text Section Below Image */}
                 <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-gray-800 mt-2">
+                  <h3 className="text-xl font-medium font-['Halyard_Display'] text-sky-950 mt-2">
                     {event.title}
                   </h3>
                 </div>
