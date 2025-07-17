@@ -1,22 +1,37 @@
 {
   "name": "foss-website",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p 3001",
+    "lint": "next lint",
+    "db:start": "docker-compose up -d postgres",
+    "db:stop": "docker-compose down",
+    "db:reset": "docker-compose down -v && docker-compose up -d postgres",
+    "db:logs": "docker-compose logs postgres"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.6.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "autoprefixer": "^10.4.20",
+    "@payloadcms/db-mongodb": "^3.35.0",
+    "@payloadcms/db-postgres": "^3.43.0",
+    "@payloadcms/next": "^3.35.0",
+    "@payloadcms/richtext-lexical": "^3.43.0",
+    "@supabase/supabase-js": "^2.50.0",
+    "foss-website": "file:",
     "framer-motion": "^12.0.11",
-    "next": "15.1.6",
+    "graphql": "^16.10.0",
+    "lucide-react": "^0.503.0",
+    "mongoose": "^8.10.0",
+    "next": "15.2.3",
+    "payload": "^3.43.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,6 +40,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8.5.3",
