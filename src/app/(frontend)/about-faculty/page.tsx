@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar"; 
 import Footer from "@/components/Footer";
 import Header from "@/components/about-faculty/Header";
 import VisionMision from "@/components/about-faculty/VisionMision";
