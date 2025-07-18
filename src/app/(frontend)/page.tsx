@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import Program from "@/components/landing/Program";
-import Footer from "@/components/Footer";
-import Header from "@/components/landing/Header";
-import NavBar from "@/components/NavBar";
-import Image from "next/image";
-import Headline from "@/components/landing/Headline";
-import Research from "@/components/landing/Research";
+import Program from "@/(frontend)/components/landing/Program";
+import Footer from "@/(frontend)/components/Footer";
+import Header from "@/(frontend)/components/landing/Header";
+// import NavBar from "@/components/NavBar";
+import NavBar from "@/(frontend)/components/Navbar";
+
+// import Image from "next/image";
+import Headline from "@/(frontend)/components/landing/Headline";
+import Research from "@/(frontend)/components/landing/Research";
 
 export const metadata: Metadata = {
   title: 'Faculty of Social Sciences - UIII',

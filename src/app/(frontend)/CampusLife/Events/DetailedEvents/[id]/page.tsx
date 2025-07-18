@@ -1,8 +1,8 @@
 "use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
 
 const DetailedEvent = () => {
   const { id } = useParams();

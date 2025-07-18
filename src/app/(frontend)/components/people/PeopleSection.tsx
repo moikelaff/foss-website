@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import PeopleCard from "./PeopleCard"; // Kalau sudah modular, panggil komponenmu
+import PeopleCard from "./PeopleCard.jsx"; // Kalau sudah modular, panggil komponenmu
 
 export default function PeopleSection() {
   return (

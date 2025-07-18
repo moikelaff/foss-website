@@ -1,14 +1,14 @@
 import React from "react";
 
-import NavBar from "@/components/NavBar";
-import ProgramBanner from "@/components/MPPProgramBanner";
-import ProgramOverview from "@/components/MPPProgramOverview";
-import ProgramSignificance from "@/components/MPPProgramSignificance";
-import ProgramWhoIsItFor from "@/components/MPPProgramWhoIsItFor"
-import ProgramLearningObjectives from "@/components/MPPProgramLearningObjectives"
-import ProgramDegreeRequirements from "@/components/MPPProgramDegreeRequirements";
-import ProgramLecturers from "@/components/PhDProgramLecturers";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import ProgramBanner from "@/(frontend)/components/MPPProgramBanner";
+import ProgramOverview from "@/(frontend)/components/MPPProgramOverview";
+import ProgramSignificance from "@/(frontend)/components/MPPProgramSignificance";
+import ProgramWhoIsItFor from "@/(frontend)/components/MPPProgramWhoIsItFor"
+import ProgramLearningObjectives from "@/(frontend)/components/MPPProgramLearningObjectives"
+import ProgramDegreeRequirements from "@/(frontend)/components/MPPProgramDegreeRequirements";
+import ProgramLecturers from "@/(frontend)/components/PhDProgramLecturers";
+import Footer from "@/(frontend)/components/Footer";
 
 export default function AcademicProgramPage() {
     return (

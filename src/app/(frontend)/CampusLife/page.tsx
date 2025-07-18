@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import { Link } from "lucide-react";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
+// import { Link } from "lucide-react";
 
 export default function CampusLife() {
   return (

@@ -1,9 +1,9 @@
-import NavBar from "@/components/NavBar"; 
-import Footer from "@/components/Footer";
-import Header from "@/components/about-faculty/Header";
-import VisionMision from "@/components/about-faculty/VisionMision";
-import Program from "@/components/about-faculty/Program";
-import Goal from "@/components/about-faculty/Goal";
+import NavBar from "@/(frontend)/components/Navbar"; 
+import Footer from "@/(frontend)/components/Footer";
+import Header from "@/(frontend)/components/about-faculty/Header";
+import VisionMision from "@/(frontend)/components/about-faculty/VisionMision";
+import Program from "@/(frontend)/components/about-faculty/Program";
+import Goal from "@/(frontend)/components/about-faculty/Goal";
 
 export default function Page() {
   return (

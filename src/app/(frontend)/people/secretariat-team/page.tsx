@@ -1,6 +1,6 @@
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import PeopleCard from "@/components/people/PeopleCard";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
+import PeopleCard from "@/(frontend)/components/people/PeopleCard";
 
 export default function Page() {
   return (

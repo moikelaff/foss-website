@@ -1,10 +1,10 @@
 import React from "react";
 
-import NavBar from "@/components/NavBar";
-import AdmissionsHero from "@/components/AdmissionsHero";
-import ProgramsSection from "@/components/ProgramsSection";
-import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import AdmissionsHero from "@/(frontend)/components/AdmissionsHero";
+import ProgramsSection from "@/(frontend)/components/ProgramsSection";
+import FAQSection from "@/(frontend)/components/FAQSection";
+import Footer from "@/(frontend)/components/Footer";
 
 export default function AdmissionsPage() {
   return (

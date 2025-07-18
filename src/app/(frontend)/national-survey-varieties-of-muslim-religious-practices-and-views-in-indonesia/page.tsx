@@ -1,7 +1,7 @@
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import Header from "@/components/national-survey/Header";
-import About from "@/components/national-survey/About";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
+import Header from "@/(frontend)/components/national-survey/Header";
+import About from "@/(frontend)/components/national-survey/About";
 
 export default function Page() {
   return (

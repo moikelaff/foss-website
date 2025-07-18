@@ -1,11 +1,11 @@
 import React from "react";
 
-import NavBar from "@/components/NavBar";
-import AcademicProgramHero from "@/components/AcademicProgramHero"
-import AcademicProgramIntro from "@/components/AcademicProgramIntro"
-import VisionMissions from "@/components/VisionMissions";
-import ProgramsSection from "@/components/ProgramsSection";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import AcademicProgramHero from "@/(frontend)/components/AcademicProgramHero"
+import AcademicProgramIntro from "@/(frontend)/components/AcademicProgramIntro"
+import VisionMissions from "@/(frontend)/components/VisionMissions";
+import ProgramsSection from "@/(frontend)/components/ProgramsSection";
+import Footer from "@/(frontend)/components/Footer";
 
 export default function AcademicProgramPage() {
     return (

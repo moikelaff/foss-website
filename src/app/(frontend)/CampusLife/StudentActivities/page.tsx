@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
 
 export default function Events() {
   const events = [

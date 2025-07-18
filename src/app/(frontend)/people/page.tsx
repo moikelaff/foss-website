@@ -1,9 +1,9 @@
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import Header from "@/components/people/Header";
-import FacultyMember from "@/components/people/FacultyMember";
-import SecretariatTeam from "@/components/people/SecretariatTeam";
-import Students from "@/components/people/Students";
+import NavBar from "@/(frontend)/components/Navbar";
+import Footer from "@/(frontend)/components/Footer";
+import Header from "@/(frontend)/components/people/Header";
+import FacultyMember from "@/(frontend)/components/people/FacultyMember";
+import SecretariatTeam from "@/(frontend)/components/people/SecretariatTeam";
+import Students from "@/(frontend)/components/people/Students";
 
 export default function Page() {
   return (

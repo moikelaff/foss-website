@@ -1,12 +1,12 @@
 import React from "react";
 
-import NavBar from "@/components/NavBar";
-import ProgramBanner from "@/components/MAProgramBanner";
-import ProgramOverview from "@/components/MAProgramOverview";
-import ProgramLearningOutcomes from "@/components/MAProgramLearningOutcomes";
-import ProgramCourseStructure from "@/components/MAProgramCourseStructure";
-import ProgramLecturers from "@/components/PhDProgramLecturers";
-import Footer from "@/components/Footer";
+import NavBar from "@/(frontend)/components/Navbar";
+import ProgramBanner from "@/(frontend)/components/MAProgramBanner";
+import ProgramOverview from "@/(frontend)/components/MAProgramOverview";
+import ProgramLearningOutcomes from "@/(frontend)/components/MAProgramLearningOutcomes";
+import ProgramCourseStructure from "@/(frontend)/components/MAProgramCourseStructure";
+import ProgramLecturers from "@/(frontend)/components/PhDProgramLecturers";
+import Footer from "@/(frontend)/components/Footer";
 
 export default function AcademicProgramPage() {
     return (
