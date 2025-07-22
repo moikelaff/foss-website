@@ -21,6 +21,7 @@
     ],
     "paths": {
       "@/(frontend)/*": ["app/(frontend)/*"],
+      "@/(payload)/*": ["app/(payload)/*"],
       "@payload-config": ["payload.config.ts"],
       "@/lib/*": ["./*"],
       "@/payload": ["payload.ts"]
