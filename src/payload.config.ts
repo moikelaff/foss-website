@@ -3,11 +3,11 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
 
-import { Media } from './src/app/(payload)/collections/LandingPage/media.js'
-import { Hero } from './src/app/(payload)/collections/LandingPage/Hero.js'
-import { Headlines } from './src/app/(payload)/collections/LandingPage/Headlines.js'
-import { Research } from './src/app/(payload)/collections/LandingPage/Research.js'
-import { Programs } from './src/app/(payload)/collections/LandingPage/Programs.js'
+// import { Media } from './src/app/(payload)/collections/LandingPage/media.js'
+// import { Hero } from './src/app/(payload)/collections/LandingPage/Hero.js'
+// import { Headlines } from './src/app/(payload)/collections/LandingPage/Headlines.js'
+// import { Research } from './src/app/(payload)/collections/LandingPage/Research.js'
+// import { Programs } from './src/app/(payload)/collections/LandingPage/Programs.js'
 import { Users } from './src/app/(payload)/collections/Users.js'
 import { Events } from './src/app/(payload)/collections/CampusLife/Events.js'
 import { StudentsActivities } from './src/app/(payload)/collections/CampusLife/StudentsActivities.js'
@@ -25,10 +25,10 @@ export default buildConfig({
     Media,
 
     // landing
-    Hero,
-    Programs,
-    Headlines,
-    Research,
+    // Hero,
+    // Programs,
+    // Headlines,
+    // Research,
 
     // campus life
     Events,
