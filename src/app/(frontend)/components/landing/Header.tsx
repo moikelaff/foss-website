@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function Header() {
   const images = [
-    "/landing-page/ClassEnvironment.jpeg",
-    "/landing-page/Building.png",
-    "/landing-page/ClassEnvironment2.jpeg",
-    "/landing-page/LectureTeaching2.png",
-    "/landing-page/ClassEnvironment3.png",
-    "/landing-page/LectureTeaching3.jpeg",
-    "/landing-page/ClassEnvironment4.png",
+    "@public/LandingPage/ClassEnvironment.jpeg",
+    "@public/LandingPage/Building.png",
+    "@public/LandingPage/ClassEnvironment2.jpeg",
+    "@public/LandingPage/LectureTeaching2.png",
+    "@public/LandingPage/ClassEnvironment3.png",
+    "@public/LandingPage/LectureTeaching3.jpeg",
+    "@public/LandingPage/ClassEnvironment4.png",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

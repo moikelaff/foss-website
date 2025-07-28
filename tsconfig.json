@@ -24,7 +24,9 @@
       "@/(payload)/*": ["app/(payload)/*"],
       "@payload-config": ["payload.config.ts"],
       "@/lib/*": ["./*"],
-      "@/payload": ["payload.ts"]
+      "@/payload": ["payload.ts"],
+      "@public/*": ["../public/*"], // <--- alias untuk folder public
+      "@src/*": ["./*"] // <--- alias untuk semua isi src
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
