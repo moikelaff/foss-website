@@ -1,12 +1,7 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import type { NextConfig } from 'next'
 
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true, // Add this line
-  },
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -27,7 +22,9 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['localhost'], // ❌ Remove this line
     
+    // Add timeout and size limits for better performance
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     dangerouslyAllowSVG: true,
@@ -36,7 +33,7 @@ const nextConfig = {
   experimental: {
     // Add any experimental features if needed
   },
-  webpack: (config: any, { isServer }: { isServer: boolean }) => {
+  webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
