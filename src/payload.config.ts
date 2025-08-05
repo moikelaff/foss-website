@@ -13,6 +13,8 @@ import { Events } from '@/(payload)/collections/CampusLife/Events.ts'
 import { StudentsActivities } from '@/(payload)/collections/CampusLife/StudentsActivities.ts'
 import { LecturerActivities } from '@/(payload)/collections/CampusLife/LecturerActivities.ts'
 import { AlumniActivities } from '@/(payload)/collections/CampusLife/AlumniActivities.ts'
+import { AcademicPrograms } from '@/(payload)/collections/AcademicProgram/academic-program.ts'
+import { AcademicProgramLanding } from '@/(payload)/collections/AcademicProgram/academic-program-landing.ts'
 
 
 export default buildConfig({
@@ -35,6 +37,10 @@ export default buildConfig({
     StudentsActivities,
     LecturerActivities,
     AlumniActivities,
+
+    // academic program
+    AcademicPrograms,
+    AcademicProgramLanding,
   ],
 
   // Your Payload secret - should be a complex and secure string, unguessable

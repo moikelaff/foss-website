@@ -2,7 +2,7 @@ import React from "react";
 
 import NavBar from "@/(frontend)/components/Navbar";
 import AdmissionsHero from "@/(frontend)/components/AdmissionsHero";
-import ProgramsSection from "@/(frontend)/components/ProgramsSection";
+import ProgramsSection from "@/(frontend)/components/academic-program/ProgramsSection";
 import FAQSection from "@/(frontend)/components/FAQSection";
 import Footer from "@/(frontend)/components/Footer";
 
