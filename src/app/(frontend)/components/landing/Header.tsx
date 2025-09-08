@@ -36,7 +36,7 @@ export default function Header() {
       <div className="absolute bottom-0 left-0 w-full h-3/4 z-10 bg-gradient-to-t from-[#01395E]/100 to-[#01395E]/0">
         <div className="text-white text-center px-6 py-12 md:px-14 flex flex-col items-center justify-center h-full mt-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 max-w-5xl">
-            Faculty of Social Sciences UIII
+            Faculty of Social Sciences
           </h1>
           <p className="max-w-5xl text-lg md:text-xl mb-6">
             Our focus includes studying, discussing, and introducing the
