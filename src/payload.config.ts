@@ -8,11 +8,12 @@ import { buildConfig } from 'payload'
 // import { Headlines } from './src/app/(payload)/collections/LandingPage/Headlines.js'
 // import { Research } from './src/app/(payload)/collections/LandingPage/Research.js'
 // import { Programs } from './src/app/(payload)/collections/LandingPage/Programs.js'
-import { Users } from '@/(payload)/collections/Users.ts'
-import { Events } from '@/(payload)/collections/CampusLife/Events.ts'
-import { StudentsActivities } from '@/(payload)/collections/CampusLife/StudentsActivities.ts'
-import { LecturerActivities } from '@/(payload)/collections/CampusLife/LecturerActivities.ts'
-import { AlumniActivities } from '@/(payload)/collections/CampusLife/AlumniActivities.ts'
+import { Media } from '@/(payload)/collections/LandingPage/media'
+import { Users } from '@/(payload)/collections/users'
+import { Events } from '@/(payload)/collections/CampusLife/Events'
+import { StudentActivities } from '@/(payload)/collections/CampusLife/StudentsActivities'
+import { LecturerActivities } from '@/(payload)/collections/CampusLife/LecturerActivities'
+import { AlumniActivities } from '@/(payload)/collections/CampusLife/AlumniActivities'
 
 
 export default buildConfig({
@@ -32,7 +33,7 @@ export default buildConfig({
 
     // campus life
     Events,
-    StudentsActivities,
+    StudentActivities,
     LecturerActivities,
     AlumniActivities,
   ],
