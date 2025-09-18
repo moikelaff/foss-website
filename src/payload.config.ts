@@ -37,12 +37,15 @@ const validateEnv = () => {
 // import { Headlines } from './src/app/(payload)/collections/LandingPage/Headlines.js'
 // import { Research } from './src/app/(payload)/collections/LandingPage/Research.js'
 // import { Programs } from './src/app/(payload)/collections/LandingPage/Programs.js'
+
 import { Media } from '@/(payload)/collections/LandingPage/media'
 import { Users } from '@/(payload)/collections/users'
 import { Events } from '@/(payload)/collections/CampusLife/Events'
 import { StudentActivities } from '@/(payload)/collections/CampusLife/StudentsActivities'
 import { LecturerActivities } from '@/(payload)/collections/CampusLife/LecturerActivities'
 import { AlumniActivities } from '@/(payload)/collections/CampusLife/AlumniActivities'
+import { AcademicPrograms } from '@/(payload)/collections/AcademicProgram/academic-program.ts'
+import { AcademicProgramLanding } from '@/(payload)/collections/AcademicProgram/academic-program-landing.ts'
 
 
 // Get validated environment variables
@@ -96,6 +99,10 @@ export default buildConfig({
     StudentActivities,
     LecturerActivities,
     AlumniActivities,
+
+    // academic program
+    AcademicPrograms,
+    AcademicProgramLanding,
   ],
 
   // Your Payload secret - should be a complex and secure string, unguessable
