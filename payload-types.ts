@@ -69,11 +69,10 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    hero: Hero;
-    programs: Program;
-    headlines: Headline;
-    research: Research;
     events: Event;
+    'student-activities': StudentActivity;
+    'lecturer-activities': LecturerActivity;
+    'alumni-activities': AlumniActivity;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -82,11 +81,10 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    hero: HeroSelect<false> | HeroSelect<true>;
-    programs: ProgramsSelect<false> | ProgramsSelect<true>;
-    headlines: HeadlinesSelect<false> | HeadlinesSelect<true>;
-    research: ResearchSelect<false> | ResearchSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
+    'student-activities': StudentActivitiesSelect<false> | StudentActivitiesSelect<true>;
+    'lecturer-activities': LecturerActivitiesSelect<false> | LecturerActivitiesSelect<true>;
+    'alumni-activities': AlumniActivitiesSelect<false> | AlumniActivitiesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -140,6 +138,13 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
   password?: string | null;
 }
 /**
@@ -187,243 +192,6 @@ export interface Media {
       filename?: string | null;
     };
   };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "hero".
- */
-export interface Hero {
-  id: number;
-  title: string;
-  subtitle?: string | null;
-  /**
-   * Upload or select background image for the hero section
-   */
-  backgroundImage?: (number | null) | Media;
-  ctaButtons?:
-    | {
-        text: string;
-        href: string;
-        style?: ('primary' | 'secondary') | null;
-        id?: string | null;
-      }[]
-    | null;
-  isActive?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "programs".
- */
-export interface Program {
-  id: number;
-  title: string;
-  /**
-   * URL-friendly version of the title
-   */
-  slug: string;
-  /**
-   * Program featured image
-   */
-  image: number | Media;
-  /**
-   * Brief program description
-   */
-  description?: string | null;
-  /**
-   * Detailed program information
-   */
-  fullDescription?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  /**
-   * Link to the detailed program page (e.g., /academic-program/ma-political-science)
-   */
-  detailsPage?: string | null;
-  /**
-   * Display order (lower numbers appear first)
-   */
-  order?: number | null;
-  /**
-   * Program duration (e.g., "2 Years", "3-4 Years")
-   */
-  duration?: string | null;
-  /**
-   * Type of degree offered
-   */
-  degree?: ('ma' | 'mpp' | 'phd' | 'other') | null;
-  /**
-   * Make program visible to public
-   */
-  isActive?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "headlines".
- */
-export interface Headline {
-  id: number;
-  title: string;
-  /**
-   * URL-friendly version of the title
-   */
-  slug: string;
-  /**
-   * Brief description for homepage display
-   */
-  description: string;
-  /**
-   * Featured image for the headline
-   */
-  image: number | Media;
-  /**
-   * Full article content
-   */
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  publishedDate: string;
-  /**
-   * Article author name
-   */
-  author?: string | null;
-  /**
-   * Tags for categorization
-   */
-  tags?:
-    | {
-        tag?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  /**
-   * Show on homepage
-   */
-  isFeatured?: boolean | null;
-  /**
-   * Make headline visible to public
-   */
-  isActive?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "research".
- */
-export interface Research {
-  id: number;
-  title: string;
-  /**
-   * URL-friendly version of the title
-   */
-  slug: string;
-  /**
-   * Research author(s)
-   */
-  author: string;
-  /**
-   * Research abstract/summary
-   */
-  abstract: string;
-  /**
-   * Research thumbnail image
-   */
-  image?: (number | null) | Media;
-  /**
-   * Full research paper content
-   */
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  publishedDate: string;
-  /**
-   * Upload research paper PDF
-   */
-  pdfFile?: (number | null) | Media;
-  /**
-   * Research keywords for search and categorization
-   */
-  keywords?:
-    | {
-        keyword?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  /**
-   * Research category
-   */
-  category?:
-    | (
-        | 'political-science'
-        | 'public-policy'
-        | 'international-relations'
-        | 'comparative-politics'
-        | 'political-theory'
-        | 'other'
-      )
-    | null;
-  /**
-   * Type of research publication
-   */
-  researchType?: ('journal' | 'working-paper' | 'conference' | 'book-chapter' | 'thesis' | 'other') | null;
-  /**
-   * Journal name (if applicable)
-   */
-  journal?: string | null;
-  /**
-   * Digital Object Identifier (DOI)
-   */
-  doi?: string | null;
-  /**
-   * Show on homepage
-   */
-  isFeatured?: boolean | null;
-  /**
-   * Make research visible to public
-   */
-  isActive?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -499,6 +267,278 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "student-activities".
+ */
+export interface StudentActivity {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Activity description and details
+   */
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Activity featured image
+   */
+  image: number | Media;
+  /**
+   * Student name(s) involved
+   */
+  student: string;
+  /**
+   * Student academic level
+   */
+  studentYear?: ('1st-year' | '2nd-year' | '3rd-year' | '4th-year' | 'graduate' | 'phd') | null;
+  /**
+   * Student program
+   */
+  program?: ('ma-political-science' | 'phd-political-science' | 'mpp' | 'other') | null;
+  /**
+   * Activity date
+   */
+  activityDate: string;
+  /**
+   * Type of activity
+   */
+  category?:
+    | (
+        | 'academic'
+        | 'research'
+        | 'conference'
+        | 'community'
+        | 'leadership'
+        | 'awards'
+        | 'internship'
+        | 'publication'
+        | 'other'
+      )
+    | null;
+  /**
+   * Specific achievement or outcome
+   */
+  achievement?: string | null;
+  /**
+   * Faculty mentor or supervisor (if applicable)
+   */
+  mentor?: string | null;
+  /**
+   * Feature this activity on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make activity visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lecturer-activities".
+ */
+export interface LecturerActivity {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Activity description and details
+   */
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Activity featured image
+   */
+  image: number | Media;
+  /**
+   * Lecturer name
+   */
+  lecturer: string;
+  /**
+   * Academic title (Dr., Prof., etc.)
+   */
+  lecturerTitle?: string | null;
+  /**
+   * Department or specialization
+   */
+  department?: string | null;
+  /**
+   * Activity date
+   */
+  activityDate: string;
+  /**
+   * Type of activity
+   */
+  category?:
+    | (
+        | 'research'
+        | 'conference'
+        | 'awards'
+        | 'funding'
+        | 'media'
+        | 'policy'
+        | 'collaboration'
+        | 'community'
+        | 'editorial'
+        | 'teaching'
+        | 'other'
+      )
+    | null;
+  /**
+   * Institution or organization involved
+   */
+  institution?: string | null;
+  /**
+   * Specific achievement or outcome
+   */
+  achievement?: string | null;
+  /**
+   * Collaborators or co-authors
+   */
+  collaborators?: string | null;
+  /**
+   * Feature this activity on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make activity visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "alumni-activities".
+ */
+export interface AlumniActivity {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  /**
+   * Activity description and details
+   */
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Activity featured image
+   */
+  image: number | Media;
+  /**
+   * Alumni name
+   */
+  alumniName: string;
+  /**
+   * Year of graduation from UIII
+   */
+  graduationYear?: number | null;
+  /**
+   * Program graduated from
+   */
+  program?: ('ma-political-science' | 'phd-political-science' | 'mpp' | 'other') | null;
+  /**
+   * Current job title or position
+   */
+  currentPosition?: string | null;
+  /**
+   * Current workplace or organization
+   */
+  currentOrganization?: string | null;
+  /**
+   * Activity date
+   */
+  activityDate: string;
+  /**
+   * Type of activity
+   */
+  category?:
+    | (
+        | 'career'
+        | 'research'
+        | 'entrepreneurship'
+        | 'policy'
+        | 'international'
+        | 'community'
+        | 'awards'
+        | 'media'
+        | 'collaboration'
+        | 'mentorship'
+        | 'other'
+      )
+    | null;
+  /**
+   * Specific achievement or accomplishment
+   */
+  achievement?: string | null;
+  /**
+   * Impact or significance of the achievement
+   */
+  impact?: string | null;
+  /**
+   * Inspirational quote from the alumni
+   */
+  quote?: string | null;
+  /**
+   * Feature this activity on homepage
+   */
+  isFeatured?: boolean | null;
+  /**
+   * Make activity visible to public
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -513,24 +553,20 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'hero';
-        value: number | Hero;
-      } | null)
-    | ({
-        relationTo: 'programs';
-        value: number | Program;
-      } | null)
-    | ({
-        relationTo: 'headlines';
-        value: number | Headline;
-      } | null)
-    | ({
-        relationTo: 'research';
-        value: number | Research;
-      } | null)
-    | ({
         relationTo: 'events';
         value: number | Event;
+      } | null)
+    | ({
+        relationTo: 'student-activities';
+        value: number | StudentActivity;
+      } | null)
+    | ({
+        relationTo: 'lecturer-activities';
+        value: number | LecturerActivity;
+      } | null)
+    | ({
+        relationTo: 'alumni-activities';
+        value: number | AlumniActivity;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -590,6 +626,13 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -646,96 +689,6 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "hero_select".
- */
-export interface HeroSelect<T extends boolean = true> {
-  title?: T;
-  subtitle?: T;
-  backgroundImage?: T;
-  ctaButtons?:
-    | T
-    | {
-        text?: T;
-        href?: T;
-        style?: T;
-        id?: T;
-      };
-  isActive?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "programs_select".
- */
-export interface ProgramsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  image?: T;
-  description?: T;
-  fullDescription?: T;
-  detailsPage?: T;
-  order?: T;
-  duration?: T;
-  degree?: T;
-  isActive?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "headlines_select".
- */
-export interface HeadlinesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  description?: T;
-  image?: T;
-  content?: T;
-  publishedDate?: T;
-  author?: T;
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
-  isFeatured?: T;
-  isActive?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "research_select".
- */
-export interface ResearchSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  author?: T;
-  abstract?: T;
-  image?: T;
-  content?: T;
-  publishedDate?: T;
-  pdfFile?: T;
-  keywords?:
-    | T
-    | {
-        keyword?: T;
-        id?: T;
-      };
-  category?: T;
-  researchType?: T;
-  journal?: T;
-  doi?: T;
-  externalUrl?: T;
-  isFeatured?: T;
-  isActive?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "events_select".
  */
 export interface EventsSelect<T extends boolean = true> {
@@ -751,6 +704,78 @@ export interface EventsSelect<T extends boolean = true> {
   speaker?: T;
   speakerBio?: T;
   isUpcoming?: T;
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "student-activities_select".
+ */
+export interface StudentActivitiesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  student?: T;
+  studentYear?: T;
+  program?: T;
+  activityDate?: T;
+  category?: T;
+  achievement?: T;
+  mentor?: T;
+  externalUrl?: T;
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lecturer-activities_select".
+ */
+export interface LecturerActivitiesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  lecturer?: T;
+  lecturerTitle?: T;
+  department?: T;
+  activityDate?: T;
+  category?: T;
+  institution?: T;
+  achievement?: T;
+  collaborators?: T;
+  publicationUrl?: T;
+  mediaUrl?: T;
+  isFeatured?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "alumni-activities_select".
+ */
+export interface AlumniActivitiesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  alumniName?: T;
+  graduationYear?: T;
+  program?: T;
+  currentPosition?: T;
+  currentOrganization?: T;
+  activityDate?: T;
+  category?: T;
+  achievement?: T;
+  impact?: T;
+  linkedinUrl?: T;
+  externalUrl?: T;
+  quote?: T;
   isFeatured?: T;
   isActive?: T;
   updatedAt?: T;

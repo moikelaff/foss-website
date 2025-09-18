@@ -122,7 +122,7 @@ export const StudentActivities: CollectionConfig = {
     },
     {
       name: 'externalUrl',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'External link (portfolio, publication, etc.)',
       },
