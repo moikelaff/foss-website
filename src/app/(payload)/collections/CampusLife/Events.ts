@@ -68,7 +68,7 @@ export const Events: CollectionConfig = {
     },
     {
       name: 'registerLink',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'Registration link (optional)',
       },

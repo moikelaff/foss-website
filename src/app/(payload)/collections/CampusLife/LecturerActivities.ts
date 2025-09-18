@@ -117,14 +117,14 @@ export const LecturerActivities: CollectionConfig = {
     },
     {
       name: 'publicationUrl',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'Link to publication or external resource',
       },
     },
     {
       name: 'mediaUrl',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'Link to media coverage or interview',
       },
