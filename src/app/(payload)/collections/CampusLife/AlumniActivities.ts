@@ -130,14 +130,14 @@ export const AlumniActivities: CollectionConfig = {
     },
     {
       name: 'linkedinUrl',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'Alumni LinkedIn profile',
       },
     },
     {
       name: 'externalUrl',
-      type: 'url',
+      type: 'text',
       admin: {
         description: 'External link (news article, publication, etc.)',
       },
